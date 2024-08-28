@@ -77,12 +77,49 @@ section {
     transition: box-shadow 0.3s ease; 
 }
 
+.list h3 {
+    color: #333333; 
+    font-size: 20px; 
+    margin: 10px 0; 
+}
+
+
+.list h3 a {
+    color: inherit; 
+    text-decoration: none; 
+    font-size: inherit; 
+}
+
+.list h3 a:hover {
+    color: #4CAF50; 
+}
 
 .list ul li{
-    background-color: #e6e1fe;
+    background-color:#e6e1fe;
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+
+.li-spcl li {
+    background-color: #e0f7fa; /* Light blue background specifically for the li-spcl class */
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.li-spcl h3 a {
+    color: #007bff; /* Replace with your desired color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-decoration: underline;
+}
+
+/* Hover effect */
+.li-spcl h3 a:hover {
+    color: #4CAF50; /* Change to another color on hover */
+}
+
 
 .sectionH2 {
     color: #333333; 
@@ -96,10 +133,7 @@ section {
     font-size: 16px; 
 }
 
-.list h3 {
-    color: #007bff;
-    font-size: 20px; 
-}
+
 
 
 
@@ -187,7 +221,7 @@ button:hover {
 .contact-info h1 {
     color: #333333;
     font-size: 32px;
-    margin-bottom: 30px; /* Increased space below h1 */
+    margin-bottom: 30px; 
 }
 
 
@@ -196,7 +230,7 @@ button:hover {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
-    margin-top: 75px; 
+    margin-top: 110px; 
     text-decoration: underline;
 }
 
@@ -218,23 +252,85 @@ button:hover {
 
 /* Social Links Styling */
 .social-links {
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
-    justify-content: center; /* Center-align the social links */
-    gap: 20px; /* Add space between social links */
+    justify-content: center;
+    gap: 20px;
 }
 
 .social-links a {
-    color: #8a63f1;
+    color: #ffffff;
+    background-color: #8a63f1;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+
 .social-links a:hover {
-    color: #4CAF50;
+    background-color: #6d4dc1; /* Darken background on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
 }
+
+
+
+
+/* Project Detail Page Styles */
+.project-detail {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.project-detail a h2 {
+    color: #bb86fc !important; /* Force the purple color */
+    text-decoration: underline !important; /* Force underline */
+    font-size: 28px;
+}
+
+.project-detail a h2:hover {
+    color: #8a63f1 !important; /* Force hover color */
+}
+
+
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-description {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.project-description p {
+    color: #555555;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.project-image {
+    flex: 1;
+    text-align: right;
+}
+
+.project-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
 
 @media only screen and (max-width: 600px) {
     section {
