@@ -140,8 +140,40 @@ section {
     font-size: 16px; 
 }
 
+.experience-section {
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 
+}
 
+.experience-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; 
+
+}
+
+.experience-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; 
+}
+
+.experience-text, .experience-image {
+    flex: 1;
+    text-indent: 70px;
+    text-align: justify;
+}
+
+.experience-image img {
+    max-width: 150%;
+    height: auto; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
 
 
 section:hover {
