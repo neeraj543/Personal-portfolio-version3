@@ -173,8 +173,68 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Contact Section Styling */
+.contact-info {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center; /* Center-align text */
+}
+
+.contact-info h1 {
+    color: #333333;
+    font-size: 32px;
+    margin-bottom: 30px; /* Increased space below h1 */
+}
 
 
+.contact-info h3 {
+    color: #555555;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 75px; 
+    text-decoration: underline;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #333333;
+    margin: 10px 0;
+}
+
+.contact-info p a {
+    color: #8a63f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info p a:hover {
+    color: #4CAF50;
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center-align the social links */
+    gap: 20px; /* Add space between social links */
+}
+
+.social-links a {
+    color: #8a63f1;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
 
 @media only screen and (max-width: 600px) {
     section {
