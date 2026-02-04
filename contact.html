@@ -1,47 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Neeraj</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
-    <header>
-        <a href="index.html">
-            <h1>Neeraj</h1>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="workspace.html">Workspace</a></li>
-                <li><a href="Neeraj resume.pdf">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="contact-info">
-        <h1>Contact Information</h1>
-            <h3>Neeraj Sreeraj</h3>
-            <p><strong>Email-Personal:</strong> <a href="mailto:neeraj.sreeraj1235@gmail.com">neeraj.sreeraj1235@gmail.com</a></p>
-            <p><strong>Email-Student:</strong> <a href="mailto:r1008394@student.thomasmore.be">r1008394@student.thomasmore.be</a></p>
-            <p> <b>Thomas More School of applied sciences (Sint-Andries, Antwerpen)</b> </p>
-            <p><strong>Phone:</strong> <a href="tel:+32471936312">+32 471936312</a></p>
-            <div class="social-links">
-                <a href="https://instagram.com/neerajjj.03" target="_blank">Instagram</a>
-                <a href="https://linkedin.com/in/neeraj" target="_blank">LinkedIn</a>
-                <a href="https://github.com/neeraj543" target="_blank">GitHub</a>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link active">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Hero Section -->
+      <section class="section" style="min-height: 70vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="section__header">
+          <span class="section__number">Contact</span>
+          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+            <span data-en="Let's work" data-nl="Laten we">Let's work</span><br>
+            <span data-en="together" data-nl="samenwerken" class="text-muted">together</span>
+          </h1>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 500px; margin-top: 1.5rem; font-size: 1.125rem;" data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision." data-nl="Ik sta altijd open om nieuwe projecten, creatieve ideeën of kansen om deel uit te maken van jouw visie te bespreken.">
+          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+        </p>
+      </section>
+
+      <!-- Contact Info -->
+      <section class="section section--alt">
+        <div class="contact-grid">
+          <div class="contact__info">
+            <h3 data-en="Get in touch" data-nl="Neem contact op">Get in touch</h3>
+
+            <div class="contact__item">
+              <span class="contact__label">Email</span>
+              <a href="mailto:neeraj.sreeraj1235@gmail.com" class="contact__value">neeraj.sreeraj1235@gmail.com</a>
             </div>
-    </section>
-    
 
-    <footer>
-        <p>&copy; 2024 Neeraj. All rights reserved.</p>
-    </footer>
+            <div class="contact__item">
+              <span class="contact__label" data-en="Student Email" data-nl="Student E-mail">Student Email</span>
+              <a href="mailto:r1008394@student.thomasmore.be" class="contact__value">r1008394@student.thomasmore.be</a>
+            </div>
+
+            <div class="contact__item">
+              <span class="contact__label" data-en="Phone" data-nl="Telefoon">Phone</span>
+              <a href="tel:+32471936312" class="contact__value">+32 471 936 312</a>
+            </div>
+
+            <div class="contact__item">
+              <span class="contact__label" data-en="Location" data-nl="Locatie">Location</span>
+              <span class="contact__value" style="cursor: default;" data-en="Belgium" data-nl="België">Belgium</span>
+            </div>
+
+            <div class="contact__social">
+              <span class="contact__label" data-en="Social" data-nl="Sociaal">Social</span>
+              <div class="social-links" style="margin-top: 0.75rem;">
+                <a href="https://github.com/neeraj543" target="_blank" class="social-link">GH</a>
+                <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link">LI</a>
+                <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link">IG</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact__cta">
+            <h2 class="contact__cta-text">
+              <span data-en="neeraj.sreeraj1235" data-nl="neeraj.sreeraj1235">neeraj.sreeraj1235</span><br>
+              <span class="text-accent">@gmail.com</span>
+            </h2>
+            <a href="mailto:neeraj.sreeraj1235@gmail.com" class="btn btn--primary" data-en="Send Email" data-nl="Stuur E-mail">Send Email</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education Reference -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number" data-en="Education" data-nl="Onderwijs">Education</span>
+          <h2 class="section__title">Thomas More <span data-en="Antwerpen" data-nl="Antwerpen">Antwerpen</span></h2>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 600px; font-size: 1.125rem; line-height: 1.8;" data-en="School of Applied Sciences, Sint-Andries campus. Graduated as a programmer with expertise in full-stack development." data-nl="Hogeschool voor Toegepaste Wetenschappen, campus Sint-Andries. Afgestudeerd als programmeur met expertise in full-stack ontwikkeling.">
+          School of Applied Sciences, Sint-Andries campus. Graduated as a programmer with expertise in full-stack development.
+        </p>
+        <a href="https://thomasmore.be/nl" target="_blank" class="btn mt-3" data-en="Visit School Website" data-nl="Bezoek Schoolwebsite">Visit School Website →</a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
-
 </html>

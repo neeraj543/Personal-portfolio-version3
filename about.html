@@ -1,48 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Neeraj Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-
 <body>
-    <header>
-        <a href="index.html">
-            <h1>Neeraj</h1>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="workspace.html">Workspace</a></li>
-                <li><a href="Neeraj resume.pdf">CV</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link active">About</a></li>
+        <li><a href="projects.html" class="side-nav__link">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
+      </div>
+    </nav>
 
-    <section>
-        <h2>About Me </h2>
-        <p class = "about-p" style="text-indent: 75px;"> Hallo, ik ben Neeraj. Ik ben momenteel een afgestudeerde programmeerstudent bij <a href="https://thomasmore.be/nl" class="Thomas">Thomas More Antwerpen</a>. Ik ben 19 jaar en heb besloten om dat te doen
-            Investeer mijn tijd om programmeren te leren. Als toegewijde full-stack developer met expertise in object-georiënteerde programmering, JavaScript en het Spring Boot framework, heb ik mijn vaardigheden
-             ontwikkeld in het creëren van robuuste en gebruiksvriendelijke webapplicaties. Met een solide basis in HTML, CSS en relationele databases ben ik uitgerust om uitdagingen aan te gaan, van de front-end 
-             tot de back-end. Mijn ervaring bij Thomas More Sint-Andries heeft me een sterke academische basis en een passie voor innovatie gegeven.
-        </p>
-    </section>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
 
-    <section class ="photo-section"> 
-        <div class = "photo-box1">
-            <img src="Images/Neerajphotograph.jpg" alt="My photo">
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Hero Section -->
+      <section class="section" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="section__header">
+          <span class="section__number">About</span>
+          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+            <span data-en="I build things" data-nl="Ik bouw dingen">I build things</span><br>
+            <span data-en="for the web" data-nl="voor het web" class="text-muted">for the web</span>
+          </h1>
         </div>
-    </section>
+      </section>
 
-    <footer>
-        <p>&copy; 2024 Copyright@ Neeraj. All rights reserved.</p>
-    </footer>
+      <!-- About Content -->
+      <section class="section">
+        <div class="about-grid">
+          <div class="about__text">
+            <p data-en="Hello! I'm Neeraj, a full-stack developer based in Belgium. I graduated from Thomas More Antwerpen where I developed a strong foundation in programming and software development." data-nl="Hallo! Ik ben Neeraj, een full-stack ontwikkelaar gevestigd in België. Ik ben afgestudeerd aan Thomas More Antwerpen waar ik een sterke basis heb ontwikkeld in programmeren en softwareontwikkeling.">
+              Hello! I'm Neeraj, a full-stack developer based in Belgium. I graduated from Thomas More Antwerpen where I developed a strong foundation in programming and software development.
+            </p>
+            <p data-en="My expertise spans across object-oriented programming, JavaScript, and the Spring Boot framework. I have a solid understanding of HTML, CSS, and relational databases, allowing me to handle challenges from front-end to back-end development." data-nl="Mijn expertise strekt zich uit over objectgeoriënteerd programmeren, JavaScript en het Spring Boot framework. Ik heb een gedegen begrip van HTML, CSS en relationele databases, waardoor ik uitdagingen aankan van front-end tot back-end ontwikkeling.">
+              My expertise spans across object-oriented programming, JavaScript, and the Spring Boot framework. I have a solid understanding of HTML, CSS, and relational databases, allowing me to handle challenges from front-end to back-end development.
+            </p>
+            <p data-en="I moved to Belgium in 2022 to pursue my studies, joining my parents who were already working here. Outside of coding, I enjoy playing badminton and watching series." data-nl="Ik ben in 2022 naar België verhuisd om mijn studies te volgen en me bij mijn ouders te voegen die hier al werkten. Buiten het coderen geniet ik van badminton en het kijken van series.">
+              I moved to Belgium in 2022 to pursue my studies, joining my parents who were already working here. Outside of coding, I enjoy playing badminton and watching series.
+            </p>
+
+            <div class="about__stats">
+              <div class="stat">
+                <span class="stat__number">19</span>
+                <span class="stat__label" data-en="Years old" data-nl="Jaar oud">Years old</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">3+</span>
+                <span class="stat__label" data-en="Projects completed" data-nl="Projecten voltooid">Projects completed</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">1</span>
+                <span class="stat__label" data-en="Internship" data-nl="Stage">Internship</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">∞</span>
+                <span class="stat__label" data-en="Curiosity" data-nl="Nieuwsgierigheid">Curiosity</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__image">
+            <img src="Images/Neerajphotograph.jpg" alt="Neeraj">
+            <span class="about__image-caption" data-en="That's me" data-nl="Dat ben ik">That's me</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number">Skills</span>
+          <h2 class="section__title" data-en="Technologies I work with" data-nl="Technologieën waarmee ik werk">Technologies <span data-en="I work with" data-nl="waarmee ik werk">I work with</span></h2>
+        </div>
+        <div class="skills-container">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">PrimeNG</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">.NET Core</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">Thymeleaf</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">H2 Database</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">Cucumber</span>
+        </div>
+      </section>
+
+      <!-- Education & Background -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number">Background</span>
+          <h2 class="section__title" data-en="Education &" data-nl="Onderwijs &">Education & <span data-en="journey" data-nl="reis">journey</span></h2>
+        </div>
+        <div class="projects-list">
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">2022</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Thomas More Antwerpen</h3>
+              <span class="project-item__tech" data-en="Graduated Programmer • Sint-Andries" data-nl="Afgestudeerd Programmeur • Sint-Andries">Graduated Programmer • Sint-Andries</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">2021</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Retail Experience" data-nl="Winkel Ervaring">Retail Experience</h3>
+              <span class="project-item__tech" data-en="Store Assistant • 3 months" data-nl="Winkelbediende • 3 maanden">Store Assistant • 3 months</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">2020</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Tutoring" data-nl="Bijles">Tutoring</h3>
+              <span class="project-item__tech" data-en="Teaching kids aged 7-14 • High School" data-nl="Les geven aan kinderen van 7-14 • Middelbare school">Teaching kids aged 7-14 • High School</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section section--alt">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="Want to work together? Let's" data-nl="Wil je samenwerken? Laten we">
+              Want to work together?<br>Let's <span data-en="connect" data-nl="contact opnemen">connect</span>
+            </h2>
+            <a href="contact.html" class="btn btn--primary" data-en="Get in Touch" data-nl="Neem Contact Op">Get in Touch</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Quick Links" data-nl="Snelle Links">Quick Links</h3>
+            <div class="social-links">
+              <a href="https://github.com/neeraj543" target="_blank" class="social-link">GH</a>
+              <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link">LI</a>
+              <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link">IG</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
-
 </html>

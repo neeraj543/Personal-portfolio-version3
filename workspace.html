@@ -1,77 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experience Section</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link active">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
+      </div>
+    </nav>
 
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
 
-    <section class="experience-section">
-      <div class="experience-box">
-        <h2>
-          Experience - Stageobservatie bij Diamond Administration India Ltd.
-        </h2>
-        <div class="experience-content">
-          <div class="experience-text">
-            <p class="internship-Diamond">
-              <b>Diamond Administration India Pvt Ltd</b> is een
-              dochteronderneming van XSS BVBA, een<b>
-                Belgisch softwarebedrijf</b
-              >
-              dat al meer dan 25 jaar de diamantindustrie bedient. Het bedrijf
-              heeft klanten in <b>België, Hongkong, Dubai en Thailand</b>. In
-              India werken 11 medewerkers en in België 5. De werkdag van een
-              programmeur begint om 10:30 uur en eindigt om 19:30 uur. Ze werken
-              drie uur aan hun taken, gevolgd door een lunchpauze van 14:00 tot
-              15:00 uur. Na de lunch hervatten ze hun werk en sturen aan het
-              einde van de dag een e-mail naar hun seniors met een overzicht van
-              hun werkzaamheden. Momenteel werkt de programmeur aan een Bidding
-              Project, een website voor het inschatten en bieden op gepolijste
-              stenen in een tender. Naast programmeren houdt de programmeur zich
-              bezig met vergaderingen, code testen, peer reviews en bugfixes. Ze
-              gebruiken<b> Angular met Prime NG</b> voor de frontend en
-              <b>C#.NET Core</b> voor de backend. Voor projectbeheer wordt
-              <b>Zoho Project</b> gebruikt en voor testen
-              <b>Selenium met Java (Cucumber framework).</b>
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Hero Section -->
+      <section class="section" style="min-height: 50vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="section__header">
+          <span class="section__number">Experience</span>
+          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+            <span data-en="Professional" data-nl="Professionele">Professional</span><br>
+            <span data-en="experience" data-nl="ervaring" class="text-muted">experience</span>
+          </h1>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 500px; margin-top: 1.5rem; font-size: 1.125rem;" data-en="My internship and work experience that shaped my skills as a developer." data-nl="Mijn stage en werkervaring die mijn vaardigheden als ontwikkelaar hebben gevormd.">
+          My internship and work experience that shaped my skills as a developer.
+        </p>
+      </section>
 
-              Het kantoor is ingedeeld per afdeling, met aparte kamers voor
-              directeurs en IT-hoofden, en een vergaderruimte. Naast
-              ontwikkelaars zijn er ook UI/UX-designers, business analisten, en
-              testers aanwezig. De sfeer op de werkplek is professioneel en
-              gestructureerd. Vraag altijd om toestemming als je foto's wilt
-              maken voor je presentatie.
+      <!-- Internship Section -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number" data-en="Internship" data-nl="Stage">Internship</span>
+          <h2 class="section__title">Diamond Administration <span data-en="India Ltd" data-nl="India Ltd">India Ltd</span></h2>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-card__content">
+            <div class="experience-card__header">
+              <h3 class="experience-card__company">XSS BVBA</h3>
+              <span class="experience-card__role" data-en="Internship Observation" data-nl="Stage Observatie">Internship Observation</span>
+            </div>
+
+            <p class="experience-card__description" data-en="Diamond Administration India Pvt Ltd is a subsidiary of XSS BVBA, a Belgian software company that has been serving the diamond industry for over 25 years. The company has clients in Belgium, Hong Kong, Dubai, and Thailand." data-nl="Diamond Administration India Pvt Ltd is een dochteronderneming van XSS BVBA, een Belgisch softwarebedrijf dat al meer dan 25 jaar de diamantindustrie bedient. Het bedrijf heeft klanten in België, Hongkong, Dubai en Thailand.">
+              Diamond Administration India Pvt Ltd is a subsidiary of XSS BVBA, a Belgian software company that has been serving the diamond industry for over 25 years. The company has clients in Belgium, Hong Kong, Dubai, and Thailand.
             </p>
+
+            <p class="experience-card__description" data-en="The team in India consists of 11 employees, while the Belgium office has 5. During my observation, I learned about their Bidding Project — a website for estimating and bidding on polished stones in a tender." data-nl="Het team in India bestaat uit 11 medewerkers, terwijl het kantoor in België er 5 heeft. Tijdens mijn observatie leerde ik over hun Bidding Project — een website voor het inschatten en bieden op gepolijste stenen in een tender.">
+              The team in India consists of 11 employees, while the Belgium office has 5. During my observation, I learned about their Bidding Project — a website for estimating and bidding on polished stones in a tender.
+            </p>
+
+            <div class="experience-card__tech">
+              <span>Angular</span>
+              <span>PrimeNG</span>
+              <span>C# .NET Core</span>
+              <span>Zoho Project</span>
+              <span>Selenium</span>
+              <span>Cucumber</span>
+            </div>
           </div>
-          <div class="experience-image">
-            <img
-              src="Images/XSS logo.png"
-              alt="Diamond Administration Office"
-            />
+
+          <div class="experience-card__logo">
+            <img src="Images/XSS logo.png" alt="XSS BVBA Logo">
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      <p>&copy; 2024 Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+      <!-- Work Environment Details -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number" data-en="Environment" data-nl="Omgeving">Environment</span>
+          <h2 class="section__title" data-en="What I" data-nl="Wat ik">What I <span data-en="learned" data-nl="leerde">learned</span></h2>
+        </div>
+
+        <div class="projects-list">
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">01</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Professional Workflow" data-nl="Professionele Workflow">Professional Workflow</h3>
+              <span class="project-item__tech" data-en="Daily standup meetings, code reviews, peer programming" data-nl="Dagelijkse stand-up meetings, code reviews, peer programming">Daily standup meetings, code reviews, peer programming</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">02</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Modern Tech Stack" data-nl="Moderne Tech Stack">Modern Tech Stack</h3>
+              <span class="project-item__tech" data-en="Angular + PrimeNG frontend, C# .NET Core backend" data-nl="Angular + PrimeNG frontend, C# .NET Core backend">Angular + PrimeNG frontend, C# .NET Core backend</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">03</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Testing Practices" data-nl="Testpraktijken">Testing Practices</h3>
+              <span class="project-item__tech" data-en="Selenium with Java using Cucumber framework" data-nl="Selenium met Java met Cucumber framework">Selenium with Java using Cucumber framework</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">04</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Project Management" data-nl="Projectbeheer">Project Management</h3>
+              <span class="project-item__tech" data-en="Zoho Project for task tracking and team collaboration" data-nl="Zoho Project voor taakbeheer en teamsamenwerking">Zoho Project for task tracking and team collaboration</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Office Structure -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number" data-en="Structure" data-nl="Structuur">Structure</span>
+          <h2 class="section__title" data-en="Team" data-nl="Team">Team <span data-en="composition" data-nl="samenstelling">composition</span></h2>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 700px; font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;" data-en="The office is organized by department, with separate rooms for directors and IT heads, plus a meeting room. Besides developers, the team includes UI/UX designers, business analysts, and testers. The workplace atmosphere is professional and structured." data-nl="Het kantoor is per afdeling ingedeeld, met aparte kamers voor directeurs en IT-hoofden, plus een vergaderruimte. Naast ontwikkelaars zijn er ook UI/UX-designers, business analisten en testers aanwezig. De werksfeer is professioneel en gestructureerd.">
+          The office is organized by department, with separate rooms for directors and IT heads, plus a meeting room. Besides developers, the team includes UI/UX designers, business analysts, and testers. The workplace atmosphere is professional and structured.
+        </p>
+
+        <div class="about__stats" style="max-width: 600px;">
+          <div class="stat">
+            <span class="stat__number">11</span>
+            <span class="stat__label" data-en="Team India" data-nl="Team India">Team India</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">5</span>
+            <span class="stat__label" data-en="Team Belgium" data-nl="Team België">Team Belgium</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">25+</span>
+            <span class="stat__label" data-en="Years in business" data-nl="Jaar in bedrijf">Years in business</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">4</span>
+            <span class="stat__label" data-en="Countries served" data-nl="Landen bediend">Countries served</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="Want to know more?" data-nl="Wil je meer weten?">
+              Want to know<br><span data-en="more" data-nl="meer">more</span>?
+            </h2>
+            <a href="Neeraj resume.pdf" class="btn btn--primary" data-en="View Full CV" data-nl="Bekijk Volledig CV">View Full CV</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Get in touch" data-nl="Neem contact op">Get in touch</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;" data-en="Interested in working together or have questions about my experience?" data-nl="Geïnteresseerd in samenwerking of vragen over mijn ervaring?">Interested in working together or have questions about my experience?</p>
+            <a href="contact.html" class="btn" data-en="Contact Me" data-nl="Contacteer Mij">Contact Me →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>

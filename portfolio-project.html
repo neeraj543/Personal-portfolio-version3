@@ -1,61 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio Project</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="project-detail">
-      <a href="#">
-        <h2>Personal Portfolio</h2>
-      </a>
-      <div class="project-content">
-        <div class="project-description">
-          <p>
-            Dit project is mijn<b> Persoonlijk Portfolio</b>, gemaakt met
-            <b>HTML en CSS</b>, en ontwikkeld met <b>Visual Studio Code</b>. Het
-            portfolio laat mijn webvaardigheden en projecten zien, met een
-            eenvoudige en moderne uitstraling die makkelijk te gebruiken is. Het
-            bevat een kort overzicht van mijn achtergrond en interesse in
-            webontwikkeling, een lijst van mijn technische vaardigheden zoals
-            HTML, CSS, en JavaScript, voorbeelden van mijn werk met informatie
-            over de gebruikte technologieën en mijn rol, en mijn contactgegevens
-            met links naar mijn professionele sociale media profielen. Het
-            ontwerp is gebruiksvriendelijk en past goed op verschillende
-            apparaten, en toont zowel mijn technische vaardigheden als mijn
-            vermogen om aantrekkelijke en functionele websites te maken.
-          </p>
-        </div>
-        <div class="project-image">
-          <img
-            src="Images/Personal porfolio image.png"
-            alt="Personal Portfolio Screenshot"
-          />
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link active">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
       </div>
-    </section>
+    </nav>
 
-    <footer>
-      <p>&copy; 2024 Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Project Hero -->
+      <section class="project-hero">
+        <a href="projects.html" class="project-hero__back">← Back to Projects</a>
+        <h1 class="project-hero__title">Personal Portfolio</h1>
+        <div class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Type</span>
+            <span class="project-hero__meta-value" data-en="Personal Project" data-nl="Persoonlijk Project">Personal Project</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Tech</span>
+            <span class="project-hero__meta-value">HTML, CSS</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Tools</span>
+            <span class="project-hero__meta-value">Visual Studio Code</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Image -->
+      <div class="project-image-full">
+        <img src="Images/Personal porfolio image.png" alt="Personal Portfolio Screenshot">
+      </div>
+
+      <!-- Project Content -->
+      <section class="project-content">
+        <p data-en="This project is my Personal Portfolio, built with HTML and CSS, developed using Visual Studio Code. The portfolio showcases my web skills and projects with a simple and modern appearance that's easy to navigate." data-nl="Dit project is mijn Persoonlijk Portfolio, gemaakt met HTML en CSS, en ontwikkeld met Visual Studio Code. Het portfolio laat mijn webvaardigheden en projecten zien, met een eenvoudige en moderne uitstraling die makkelijk te gebruiken is.">
+          This project is my Personal Portfolio, built with HTML and CSS, developed using Visual Studio Code. The portfolio showcases my web skills and projects with a simple and modern appearance that's easy to navigate.
+        </p>
+
+        <h3 data-en="Features" data-nl="Kenmerken">Features</h3>
+        <ul>
+          <li data-en="Brief overview of my background and interest in web development" data-nl="Kort overzicht van mijn achtergrond en interesse in webontwikkeling">Brief overview of my background and interest in web development</li>
+          <li data-en="List of technical skills including HTML, CSS, and JavaScript" data-nl="Lijst van technische vaardigheden zoals HTML, CSS en JavaScript">List of technical skills including HTML, CSS, and JavaScript</li>
+          <li data-en="Portfolio of work with technology information and my role" data-nl="Voorbeelden van mijn werk met informatie over de gebruikte technologieën en mijn rol">Portfolio of work with technology information and my role</li>
+          <li data-en="Contact details with links to professional social media profiles" data-nl="Contactgegevens met links naar professionele sociale media profielen">Contact details with links to professional social media profiles</li>
+          <li data-en="User-friendly design that adapts well to different devices" data-nl="Gebruiksvriendelijk ontwerp dat goed past op verschillende apparaten">User-friendly design that adapts well to different devices</li>
+        </ul>
+
+        <p data-en="The design demonstrates both my technical skills and my ability to create attractive and functional websites." data-nl="Het ontwerp toont zowel mijn technische vaardigheden als mijn vermogen om aantrekkelijke en functionele websites te maken.">
+          The design demonstrates both my technical skills and my ability to create attractive and functional websites.
+        </p>
+      </section>
+
+      <!-- Navigation -->
+      <section class="section section--alt">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="Next project" data-nl="Volgend project">
+              Next<br><span data-en="project" data-nl="project">project</span>
+            </h2>
+            <a href="restaurant-project.html" class="btn btn--primary">Restaurant Website →</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Back to overview" data-nl="Terug naar overzicht">Back to overview</h3>
+            <a href="projects.html" class="btn" data-en="All Projects" data-nl="Alle Projecten">All Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>

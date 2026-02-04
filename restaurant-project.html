@@ -1,81 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Website Project</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="project-detail">
-      <a href="https://advanced-project-retake-6e4ejboboq-ew.a.run.app/">
-        <h2>Restaurant Website</h2>
-      </a>
-      <div class="project-content">
-        <div class="project-description">
-          <p>
-            Dit project is mijn eerste serieuze website, ontwikkeld voor een
-            restaurantketen. De website is gebouwd met <b>Spring Boot 3.2.2</b>,
-            waarbij <b>Thymeleaf </b>wordt gebruikt als template-engine om
-            HTML-pagina's te maken. <b>Spring Data JPA</b> haalt gegevens uit de
-            database, en <b>H2 Database </b>wordt gebruikt voor opslag tijdens
-            de ontwikkeling.
-          </p>
-          <p>In de applicatie heb ik drie controllers ingesteld:</p>
-          <ul>
-            <li>
-              <b>DishController:</b> Beheert de pagina's en logica voor de
-              gerechten
-            </li>
-            <li>
-              <b>RestaurantController:</b> Beheert de pagina's en informatie
-              over de restaurants
-            </li>
-            <li>
-              <b>HomeController:</b> Beheert de homepagina en andere algemene
-              pagina's
-            </li>
-          </ul>
-          <p>
-            Deze controllers zorgen ervoor dat de juiste pagina's worden
-            geladen, terwijl de repository-laag gegevens uit de database haalt,
-            zoals de lijst van restaurants. De gegevens worden op een
-            gebruiksvriendelijke manier gepresenteerd. De modellen zorgen ervoor
-            dat de gegevens gestructureerd en consistent zijn. Ze worden
-            gebruikt door de controllers om gegevens op te halen en deze aan de
-            weergave door te geven. Voor de ontwikkeling van deze website heb ik
-            <b>HTML, CSS, en JavaScript</b> gebruikt en <b>IntelliJ</b> is
-            gebruikt als IDE.
-          </p>
-        </div>
-        <div class="project-image">
-          <img
-            src="Images/restaurant Food img.jpg"
-            alt="Restaurant Website Screenshot"
-          />
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Website — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link active">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
       </div>
-    </section>
+    </nav>
 
-    <footer>
-      <p>&copy; 2024 Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Project Hero -->
+      <section class="project-hero">
+        <a href="projects.html" class="project-hero__back">← Back to Projects</a>
+        <h1 class="project-hero__title">Restaurant Website</h1>
+        <div class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Type</span>
+            <span class="project-hero__meta-value" data-en="Full-Stack Project" data-nl="Full-Stack Project">Full-Stack Project</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Backend</span>
+            <span class="project-hero__meta-value">Spring Boot 3.2.2</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Frontend</span>
+            <span class="project-hero__meta-value">Thymeleaf, HTML, CSS</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Database</span>
+            <span class="project-hero__meta-value">H2 Database</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Link</span>
+            <a href="https://advanced-project-retake-6e4ejboboq-ew.a.run.app/" target="_blank" class="project-hero__meta-value" style="color: var(--accent);">View Live ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Image -->
+      <div class="project-image-full">
+        <img src="Images/restaurant Food img.jpg" alt="Restaurant Website Screenshot">
+      </div>
+
+      <!-- Project Content -->
+      <section class="project-content">
+        <p data-en="This project is my first serious website, developed for a restaurant chain. The website is built with Spring Boot 3.2.2, using Thymeleaf as the template engine for creating HTML pages. Spring Data JPA retrieves data from the database, and H2 Database is used for storage during development." data-nl="Dit project is mijn eerste serieuze website, ontwikkeld voor een restaurantketen. De website is gebouwd met Spring Boot 3.2.2, waarbij Thymeleaf wordt gebruikt als template-engine om HTML-pagina's te maken. Spring Data JPA haalt gegevens uit de database, en H2 Database wordt gebruikt voor opslag tijdens de ontwikkeling.">
+          This project is my first serious website, developed for a restaurant chain. The website is built with Spring Boot 3.2.2, using Thymeleaf as the template engine for creating HTML pages. Spring Data JPA retrieves data from the database, and H2 Database is used for storage during development.
+        </p>
+
+        <h3 data-en="Architecture" data-nl="Architectuur">Architecture</h3>
+        <p data-en="In the application I implemented three controllers:" data-nl="In de applicatie heb ik drie controllers ingesteld:">
+          In the application I implemented three controllers:
+        </p>
+        <ul>
+          <li data-en="DishController — Manages pages and logic for dishes" data-nl="DishController — Beheert de pagina's en logica voor de gerechten">DishController — Manages pages and logic for dishes</li>
+          <li data-en="RestaurantController — Manages pages and information about restaurants" data-nl="RestaurantController — Beheert de pagina's en informatie over de restaurants">RestaurantController — Manages pages and information about restaurants</li>
+          <li data-en="HomeController — Manages the homepage and other general pages" data-nl="HomeController — Beheert de homepagina en andere algemene pagina's">HomeController — Manages the homepage and other general pages</li>
+        </ul>
+
+        <p data-en="These controllers ensure that the correct pages are loaded, while the repository layer retrieves data from the database, such as the list of restaurants. The data is presented in a user-friendly way. The models ensure that the data is structured and consistent." data-nl="Deze controllers zorgen ervoor dat de juiste pagina's worden geladen, terwijl de repository-laag gegevens uit de database haalt, zoals de lijst van restaurants. De gegevens worden op een gebruiksvriendelijke manier gepresenteerd. De modellen zorgen ervoor dat de gegevens gestructureerd en consistent zijn.">
+          These controllers ensure that the correct pages are loaded, while the repository layer retrieves data from the database, such as the list of restaurants. The data is presented in a user-friendly way. The models ensure that the data is structured and consistent.
+        </p>
+
+        <h3 data-en="Tech Stack" data-nl="Tech Stack">Tech Stack</h3>
+        <ul>
+          <li>Spring Boot 3.2.2</li>
+          <li>Thymeleaf</li>
+          <li>Spring Data JPA</li>
+          <li>H2 Database</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>IntelliJ IDEA</li>
+        </ul>
+      </section>
+
+      <!-- Navigation -->
+      <section class="section section--alt">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="Next project" data-nl="Volgend project">
+              Next<br><span data-en="project" data-nl="project">project</span>
+            </h2>
+            <a href="bootstrap-project.html" class="btn btn--primary">Bootstrap Website →</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Back to overview" data-nl="Terug naar overzicht">Back to overview</h3>
+            <a href="projects.html" class="btn" data-en="All Projects" data-nl="Alle Projecten">All Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>

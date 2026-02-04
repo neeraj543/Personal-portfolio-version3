@@ -1,88 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Neeraj Website</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section>
-      <h2 class="sectionH2">Projects & Services</h2>
-      <div class="list">
-        <ul>
-          <div class="li-spcl">
-            <li>
-              <h3><a href="portfolio-project.html">Personal Portfolio</a></h3>
-              <p>
-                Mijn persoonlijke portfolio, een online showcase van mijn
-                vaardigheden en projecten, ontwikkeld met HTML, CSS.
-              </p>
-            </li>
-            <li>
-              <h3><a href="restaurant-project.html">Restaurant website</a></h3>
-              <p>
-                Een online platform, gebouwd met Spring Boot, dat een uitgebreid
-                menu en de locaties van onze restaurants presenteert.
-              </p>
-            </li>
-            <li>
-              <h3><a href="bootstrap-project.html">Bootstrap website</a></h3>
-              <p>
-                Een eenvoudige webpagina over de legendarische superheld Iron
-                Man, gemaakt met het Bootstrap-framework.
-              </p>
-            </li>
-          </div>
-          <h2>Extra activities</h2>
-          <li>
-            <h3>Tutoring</h3>
-            <p>
-              Ik heb van 2020 tot 2021 als bijlesdocent voor jonge kinderen
-              gewerkt toen ik op de middelbare school zat. Vroeger hielp ik
-              kinderen tussen de 7 en 14 jaar met hun huiswerk of toetsen.
-            </p>
-          </li>
-          <li>
-            <h3>Winkelbediende</h3>
-            <p>
-              In het jaar 2021, tijdens het einde van covid, werkte ik in een
-              winkel om dingen te regelen. Tijdens mijn middelbare schooltijd
-              heb ik daar bijna drie maanden gewerkt.
-            </p>
-          </li>
-          <li>
-            <h3>Onderwijs</h3>
-            <p>
-              Ik heb mijn middelbare school in 2022 afgerond en ben in België
-              komen studeren. Mijn ouders werkten hier, dus ik besloot bij hen
-              te gaan wonen. Mijn hobby's zijn badminton, programmeren en kijk
-              ook graag series.
-            </p>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link active">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
       </div>
-    </section>
+    </nav>
 
-    <footer>
-      <p>&copy; 2024 Copyright@ Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Hero Section -->
+      <section class="section" style="min-height: 50vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="section__header">
+          <span class="section__number">Work</span>
+          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
+            <span data-en="Selected" data-nl="Geselecteerde">Selected</span><br>
+            <span data-en="projects" data-nl="projecten" class="text-muted">projects</span>
+          </h1>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 500px; margin-top: 1.5rem; font-size: 1.125rem;" data-en="A collection of projects I've worked on during my studies and personal time. Each one taught me something new." data-nl="Een verzameling projecten waar ik aan heb gewerkt tijdens mijn studie en vrije tijd. Elk project heeft me iets nieuws geleerd.">
+          A collection of projects I've worked on during my studies and personal time. Each one taught me something new.
+        </p>
+      </section>
+
+      <!-- Projects List -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number">01</span>
+          <h2 class="section__title" data-en="Development" data-nl="Ontwikkeling">Development <span data-en="projects" data-nl="projecten">projects</span></h2>
+        </div>
+        <div class="projects-list">
+          <a href="portfolio-project.html" class="project-item">
+            <span class="project-item__number">01</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Personal Portfolio</h3>
+              <span class="project-item__tech">HTML • CSS • Responsive Design</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+          <a href="restaurant-project.html" class="project-item">
+            <span class="project-item__number">02</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Restaurant Website</h3>
+              <span class="project-item__tech">Spring Boot 3.2.2 • Thymeleaf • H2 Database</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+          <a href="bootstrap-project.html" class="project-item">
+            <span class="project-item__number">03</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Bootstrap Website</h3>
+              <span class="project-item__tech">Bootstrap • HTML • CSS • Iron Man Theme</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Other Activities -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number">02</span>
+          <h2 class="section__title" data-en="Other" data-nl="Andere">Other <span data-en="activities" data-nl="activiteiten">activities</span></h2>
+        </div>
+        <div class="projects-list">
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">—</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Tutoring" data-nl="Bijles">Tutoring</h3>
+              <span class="project-item__tech" data-en="2020-2021 • Helped children aged 7-14 with homework and tests" data-nl="2020-2021 • Hielp kinderen van 7-14 jaar met huiswerk en toetsen">2020-2021 • Helped children aged 7-14 with homework and tests</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+          <div class="project-item" style="cursor: default;">
+            <span class="project-item__number">—</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title" data-en="Retail Work" data-nl="Winkelwerk">Retail Work</h3>
+              <span class="project-item__tech" data-en="2021 • Store assistant during end of Covid period" data-nl="2021 • Winkelbediende tijdens het einde van de Covid-periode">2021 • Store assistant during end of Covid period</span>
+            </div>
+            <span class="project-item__arrow"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Overview -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number">03</span>
+          <h2 class="section__title" data-en="Technologies" data-nl="Technologieën">Technologies <span data-en="used" data-nl="gebruikt">used</span></h2>
+        </div>
+        <div class="skills-container">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Thymeleaf</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">H2 Database</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">Git</span>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="Have a project in mind?" data-nl="Heb je een project in gedachten?">
+              Have a project<br>in <span data-en="mind" data-nl="gedachten">mind</span>?
+            </h2>
+            <a href="contact.html" class="btn btn--primary" data-en="Let's Talk" data-nl="Laten we Praten">Let's Talk</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Want to see more?" data-nl="Wil je meer zien?">Want to see more?</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;" data-en="Check out my GitHub for more projects and code samples." data-nl="Bekijk mijn GitHub voor meer projecten en codevoorbeelden.">Check out my GitHub for more projects and code samples.</p>
+            <a href="https://github.com/neeraj543" target="_blank" class="btn">GitHub Profile →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>

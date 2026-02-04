@@ -1,53 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bootstrap Website Project</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <section class="project-detail">
-      <a href="https://neeraj543.github.io/UserInterface-Bootstrap-IronmanWeb/">
-        <h2>Bootstrap Website</h2>
-      </a>
-      <div class="project-content">
-        <div class="project-description">
-          <p>
-            Dit project is een eenvoudige webpagina over de superheld
-            <b>Iron Man</b>. Het is gemaakt met <b>HTML, CSS</b>, en
-            voornamelijk met het <b>Bootstrap-framework</b>. Deze pagina was een
-            van mijn eerste projecten en laat de geschiedenis van Iron Man zien.
-            Het ontwerp is responsief, wat betekent dat de pagina goed werkt op
-            zowel computers als mobiele apparaten. Het project is ontwikkeld met
-            Visual Studio Code.
-          </p>
-        </div>
-        <div class="project-image">
-          <img src="Images/IronMan.jpg" alt="Bootstrap Website Screenshot" />
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Website — Neeraj</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link active">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
       </div>
-    </section>
+    </nav>
 
-    <footer>
-      <p>&copy; 2024 Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content page-transition">
+      <!-- Project Hero -->
+      <section class="project-hero">
+        <a href="projects.html" class="project-hero__back">← Back to Projects</a>
+        <h1 class="project-hero__title">Bootstrap Website</h1>
+        <div class="project-hero__meta">
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Type</span>
+            <span class="project-hero__meta-value" data-en="Frontend Project" data-nl="Frontend Project">Frontend Project</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Tech</span>
+            <span class="project-hero__meta-value">Bootstrap, HTML, CSS</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Theme</span>
+            <span class="project-hero__meta-value">Iron Man</span>
+          </div>
+          <div class="project-hero__meta-item">
+            <span class="project-hero__meta-label">Link</span>
+            <a href="https://neeraj543.github.io/UserInterface-Bootstrap-IronmanWeb/" target="_blank" class="project-hero__meta-value" style="color: var(--accent);">View Live ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Image -->
+      <div class="project-image-full">
+        <img src="Images/IronMan.jpg" alt="Bootstrap Website Screenshot">
+      </div>
+
+      <!-- Project Content -->
+      <section class="project-content">
+        <p data-en="This project is a simple webpage about the superhero Iron Man. It's built with HTML, CSS, and primarily using the Bootstrap framework. This page was one of my first projects and showcases the history of Iron Man." data-nl="Dit project is een eenvoudige webpagina over de superheld Iron Man. Het is gemaakt met HTML, CSS, en voornamelijk met het Bootstrap-framework. Deze pagina was een van mijn eerste projecten en laat de geschiedenis van Iron Man zien.">
+          This project is a simple webpage about the superhero Iron Man. It's built with HTML, CSS, and primarily using the Bootstrap framework. This page was one of my first projects and showcases the history of Iron Man.
+        </p>
+
+        <h3 data-en="Features" data-nl="Kenmerken">Features</h3>
+        <ul>
+          <li data-en="Responsive design — works well on both computers and mobile devices" data-nl="Responsief ontwerp — werkt goed op zowel computers als mobiele apparaten">Responsive design — works well on both computers and mobile devices</li>
+          <li data-en="Built with Bootstrap framework for rapid development" data-nl="Gebouwd met Bootstrap-framework voor snelle ontwikkeling">Built with Bootstrap framework for rapid development</li>
+          <li data-en="Showcases the history and story of Iron Man" data-nl="Toont de geschiedenis en het verhaal van Iron Man">Showcases the history and story of Iron Man</li>
+          <li data-en="Developed using Visual Studio Code" data-nl="Ontwikkeld met Visual Studio Code">Developed using Visual Studio Code</li>
+        </ul>
+
+        <p data-en="This was one of my earliest projects, where I learned how to use the Bootstrap framework to quickly build responsive and visually appealing web pages." data-nl="Dit was een van mijn eerste projecten, waar ik leerde hoe ik het Bootstrap-framework kon gebruiken om snel responsieve en visueel aantrekkelijke webpagina's te bouwen.">
+          This was one of my earliest projects, where I learned how to use the Bootstrap framework to quickly build responsive and visually appealing web pages.
+        </p>
+      </section>
+
+      <!-- Navigation -->
+      <section class="section section--alt">
+        <div class="contact-grid">
+          <div class="contact__cta">
+            <h2 class="contact__cta-text" data-en="First project" data-nl="Eerste project">
+              First<br><span data-en="project" data-nl="project">project</span>
+            </h2>
+            <a href="portfolio-project.html" class="btn btn--primary">← Personal Portfolio</a>
+          </div>
+          <div class="contact__info">
+            <h3 data-en="Back to overview" data-nl="Terug naar overzicht">Back to overview</h3>
+            <a href="projects.html" class="btn" data-en="All Projects" data-nl="Alle Projecten">All Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>

@@ -1,45 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neeraj — Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <div class="site-wrapper">
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+      <a href="index.html" class="side-nav__logo">N.</a>
+      <ul class="side-nav__links">
+        <li><a href="index.html" class="side-nav__link active">Home</a></li>
+        <li><a href="about.html" class="side-nav__link">About</a></li>
+        <li><a href="projects.html" class="side-nav__link">Work</a></li>
+        <li><a href="workspace.html" class="side-nav__link">Experience</a></li>
+        <li><a href="contact.html" class="side-nav__link">Contact</a></li>
+      </ul>
+      <div class="side-nav__footer">
+        <button class="lang-toggle" onclick="toggleLanguage()">EN/NL</button>
+      </div>
+    </nav>
 
-  <body>
-    <header>
-      <a href="index.html">
-        <h1>Neeraj</h1>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="workspace.html">Workspace</a></li>
-          <li><a href="Neeraj resume.pdf">CV</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container">
-      <section>
-        <h2>Welcome to my personal website!</h2>
-        <p>
-          Hallo, Ik ben <span>Neeraj</span> en ik ben een student programmeur.
-        </p>
-      </section>
-      <section class="photo-section">
-        <div class="photo-box">
-          <img src="Images/photo1.jpg" alt="Photo 1" />
-        </div>
-      </section>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" class="mobile-nav__logo">N.</a>
+      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="mobile-menu__link">Home</a>
+      <a href="about.html" class="mobile-menu__link">About</a>
+      <a href="projects.html" class="mobile-menu__link">Work</a>
+      <a href="workspace.html" class="mobile-menu__link">Experience</a>
+      <a href="contact.html" class="mobile-menu__link">Contact</a>
+      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
     </div>
 
-    <footer>
-      <p>&copy; 2024 Copyright@ Neeraj. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__greeting" data-en="Hello, I'm" data-nl="Hallo, ik ben">Hello, I'm</p>
+          <h1 class="hero__title">
+            Neeraj
+            <span data-en="Full-Stack Developer" data-nl="Full-Stack Ontwikkelaar">Full-Stack Developer</span>
+          </h1>
+          <p class="hero__description" data-en="A developer passionate about building clean, user-focused web applications. Currently based in Belgium, crafting digital experiences with modern technologies." data-nl="Een ontwikkelaar met passie voor het bouwen van gebruiksvriendelijke webapplicaties. Momenteel woonachtig in België, waar ik digitale ervaringen creëer met moderne technologieën.">
+            A developer passionate about building clean, user-focused web applications. Currently based in Belgium, crafting digital experiences with modern technologies.
+          </p>
+          <div class="hero__cta">
+            <a href="projects.html" class="btn btn--primary" data-en="View Work" data-nl="Bekijk Werk">View Work</a>
+            <a href="Neeraj resume.pdf" class="btn" data-en="Download CV" data-nl="Download CV">Download CV</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__image-container">
+            <img src="Images/Neerajphotograph.jpg" alt="Neeraj" class="hero__image">
+            <div class="hero__image-border"></div>
+          </div>
+        </div>
+        <div class="hero__scroll-indicator">
+          <span>Scroll</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- Quick About Preview -->
+      <section class="section">
+        <div class="section__header">
+          <span class="section__number">01</span>
+          <h2 class="section__title" data-en="A bit about" data-nl="Een beetje over">A bit about <span data-en="me" data-nl="mij">me</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about__text">
+            <p data-en="I'm a graduated programmer from Thomas More Antwerpen with a focus on full-stack development. My journey in tech started with curiosity and evolved into a genuine passion for creating meaningful digital solutions." data-nl="Ik ben een afgestudeerde programmeur van Thomas More Antwerpen met een focus op full-stack development. Mijn reis in tech begon met nieuwsgierigheid en evolueerde naar een oprechte passie voor het creëren van zinvolle digitale oplossingen.">
+              I'm a graduated programmer from Thomas More Antwerpen with a focus on full-stack development. My journey in tech started with curiosity and evolved into a genuine passion for creating meaningful digital solutions.
+            </p>
+            <p data-en="I believe in writing code that's not just functional, but maintainable and elegant. When I'm not coding, you'll find me playing badminton or watching series." data-nl="Ik geloof in het schrijven van code die niet alleen functioneel is, maar ook onderhoudbaar en elegant. Als ik niet aan het coderen ben, vind je me terug bij badminton of het kijken van series.">
+              I believe in writing code that's not just functional, but maintainable and elegant. When I'm not coding, you'll find me playing badminton or watching series.
+            </p>
+            <div class="skills-container">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">C# .NET</span>
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+            <a href="about.html" class="btn mt-4" data-en="More About Me" data-nl="Meer Over Mij">More About Me →</a>
+          </div>
+          <div class="about__image">
+            <img src="Images/photo1.jpg" alt="Working">
+            <span class="about__image-caption" data-en="Based in Belgium" data-nl="Gevestigd in België">Based in Belgium</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section class="section section--alt">
+        <div class="section__header">
+          <span class="section__number">02</span>
+          <h2 class="section__title" data-en="Selected" data-nl="Geselecteerde">Selected <span data-en="projects" data-nl="projecten">projects</span></h2>
+        </div>
+        <div class="projects-list">
+          <a href="portfolio-project.html" class="project-item">
+            <span class="project-item__number">01</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Personal Portfolio</h3>
+              <span class="project-item__tech">HTML • CSS</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+          <a href="restaurant-project.html" class="project-item">
+            <span class="project-item__number">02</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Restaurant Website</h3>
+              <span class="project-item__tech">Spring Boot • Thymeleaf • H2</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+          <a href="bootstrap-project.html" class="project-item">
+            <span class="project-item__number">03</span>
+            <div class="project-item__info">
+              <h3 class="project-item__title">Bootstrap Website</h3>
+              <span class="project-item__tech">Bootstrap • HTML • CSS</span>
+            </div>
+            <span class="project-item__arrow">→</span>
+          </a>
+        </div>
+        <a href="projects.html" class="btn mt-4" data-en="All Projects" data-nl="Alle Projecten">All Projects →</a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
+        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Language Toggle
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'nl' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // Smooth scroll to top
+    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>
