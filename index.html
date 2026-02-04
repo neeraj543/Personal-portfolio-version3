@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neeraj — Developer</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -36,7 +36,7 @@
       <a href="projects.html" class="mobile-menu__link">Work</a>
       <a href="workspace.html" class="mobile-menu__link">Experience</a>
       <a href="contact.html" class="mobile-menu__link">Contact</a>
-      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+      <a href="documents/Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
     </div>
 
     <!-- Main Content -->
@@ -53,12 +53,12 @@
           </p>
           <div class="hero__cta">
             <a href="projects.html" class="btn btn--primary" data-en="View Work" data-nl="Bekijk Werk">View Work</a>
-            <a href="Neeraj resume.pdf" class="btn" data-en="Download CV" data-nl="Download CV">Download CV</a>
+            <a href="documents/Neeraj resume.pdf" class="btn" data-en="Download CV" data-nl="Download CV">Download CV</a>
           </div>
         </div>
         <div class="hero__visual">
           <div class="hero__image-container">
-            <img src="Images/Neerajphotograph.jpg" alt="Neeraj" class="hero__image">
+            <img src="images/Neerajphotograph.jpg" alt="Neeraj" class="hero__image">
             <div class="hero__image-border"></div>
           </div>
         </div>
@@ -94,7 +94,7 @@
             <a href="about.html" class="btn mt-4" data-en="More About Me" data-nl="Meer Over Mij">More About Me →</a>
           </div>
           <div class="about__image">
-            <img src="Images/photo1.jpg" alt="Working">
+            <img src="images/photo1.jpg" alt="Working">
             <span class="about__image-caption" data-en="Based in Belgium" data-nl="Gevestigd in België">Based in Belgium</span>
           </div>
         </div>
@@ -143,27 +143,6 @@
     </main>
   </div>
 
-  <script>
-    // Language Toggle
-    let currentLang = 'en';
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'nl' : 'en';
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-      });
-    }
-
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-
-    // Smooth scroll to top
-    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>

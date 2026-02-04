@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Neeraj</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -36,7 +36,7 @@
       <a href="projects.html" class="mobile-menu__link">Work</a>
       <a href="workspace.html" class="mobile-menu__link">Experience</a>
       <a href="contact.html" class="mobile-menu__link">Contact</a>
-      <a href="Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+      <a href="documents/Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
     </div>
 
     <!-- Main Content -->
@@ -121,24 +121,6 @@
     </main>
   </div>
 
-  <script>
-    let currentLang = 'en';
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'nl' : 'en';
-      document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = el.getAttribute(`data-${currentLang}`);
-      });
-    }
-
-    function toggleMobileMenu() {
-      document.getElementById('mobileMenu').classList.toggle('open');
-    }
-
-    document.querySelector('.footer__back-to-top')?.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
