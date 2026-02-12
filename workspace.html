@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Experience — Neeraj</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="site-wrapper">
+  <div class="d-flex min-vh-100">
     <!-- Side Navigation -->
-    <nav class="side-nav">
+    <nav class="side-nav d-none d-md-flex">
       <a href="index.html" class="side-nav__logo">N.</a>
       <ul class="side-nav__links">
         <li><a href="index.html" class="side-nav__link">Home</a></li>
@@ -26,171 +29,90 @@
     </nav>
 
     <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-      <a href="index.html" class="mobile-nav__logo">N.</a>
-      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    <nav class="navbar fixed-top d-md-none border-bottom border-custom" style="background: var(--bg-secondary);">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand font-mono fw-bold text-accent">N.</a>
+        <button class="btn btn-link text-white fs-4 p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">&#9776;</button>
+      </div>
     </nav>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-menu__link">Home</a>
-      <a href="about.html" class="mobile-menu__link">About</a>
-      <a href="projects.html" class="mobile-menu__link">Work</a>
-      <a href="workspace.html" class="mobile-menu__link">Experience</a>
-      <a href="contact.html" class="mobile-menu__link">Contact</a>
-      <a href="documents/Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    <div class="offcanvas offcanvas-end bg-dark" id="mobileMenu">
+      <div class="offcanvas-header border-bottom border-custom">
+        <h5 class="offcanvas-title font-mono text-accent fw-bold">N.</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-3 pt-4">
+        <a href="index.html" class="mobile-menu__link fs-4 fw-semibold">Home</a>
+        <a href="about.html" class="mobile-menu__link fs-4 fw-semibold">About</a>
+        <a href="projects.html" class="mobile-menu__link fs-4 fw-semibold">Work</a>
+        <a href="workspace.html" class="mobile-menu__link fs-4 fw-semibold">Experience</a>
+        <a href="contact.html" class="mobile-menu__link fs-4 fw-semibold">Contact</a>
+        <a href="documents/Neeraj resume.pdf" class="mobile-menu__link fs-4 fw-semibold">CV ↗</a>
+      </div>
     </div>
 
     <!-- Main Content -->
-    <main class="main-content page-transition">
+    <main class="main-content flex-grow-1">
       <!-- Hero Section -->
-      <section class="section" style="min-height: 50vh; display: flex; flex-direction: column; justify-content: center;">
-        <div class="section__header">
-          <span class="section__number">Experience</span>
-          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-            <span data-en="Professional" data-nl="Professionele">Professional</span><br>
-            <span data-en="experience" data-nl="ervaring" class="text-muted">experience</span>
-          </h1>
-        </div>
-        <p style="color: var(--text-secondary); max-width: 500px; margin-top: 1.5rem; font-size: 1.125rem;" data-en="My internship and work experience that shaped my skills as a developer." data-nl="Mijn stage en werkervaring die mijn vaardigheden als ontwikkelaar hebben gevormd.">
+      <section class="d-flex flex-column justify-content-center py-5 px-4 px-lg-5" style="min-height: 50vh;">
+        <span class="section-label" data-en="experience" data-nl="ervaring">experience</span>
+        <h1 class="display-4 fw-bold">
+          <span data-en="Professional" data-nl="Professionele">Professional</span><br>
+          <span class="text-muted" data-en="experience" data-nl="ervaring">experience</span>
+        </h1>
+        <p class="fs-5 text-secondary mt-3" style="max-width: 500px; line-height: 1.8;" data-en="My internship and work experience that shaped my skills as a developer." data-nl="Mijn stage en werkervaring die mijn vaardigheden als ontwikkelaar hebben gevormd.">
           My internship and work experience that shaped my skills as a developer.
         </p>
       </section>
 
-      <!-- Internship Section -->
-      <section class="section section--alt">
-        <div class="section__header">
-          <span class="section__number" data-en="Internship" data-nl="Stage">Internship</span>
-          <h2 class="section__title">Diamond Administration <span data-en="India Ltd" data-nl="India Ltd">India Ltd</span></h2>
+      <!-- Internship at CLT PRT -->
+      <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
+        <span class="section-label" data-en="internship" data-nl="stage">internship</span>
+        <h2 class="display-6 fw-bold mb-4">CLT PRT</h2>
+
+        <div class="mb-5">
+          <h3 class="fs-5 fw-semibold mb-1" data-en="Software Development Intern" data-nl="Software Ontwikkelaar Stagiair">Software Development Intern</h3>
+          <span class="font-mono small text-muted" data-en="November 2024 – January 2025" data-nl="November 2024 – Januari 2025">November 2024 – January 2025</span>
+          <p class="fs-5 text-secondary mt-3" style="max-width: 700px; line-height: 1.8;" data-en="Developed an internal web application using Spring Boot (backend) and React (frontend) to streamline Revit PDF file sharing and automate file renaming according to company naming conventions, significantly reducing manual processing time." data-nl="Ontwikkelde een interne webapplicatie met Spring Boot (backend) en React (frontend) om het delen van Revit PDF-bestanden te stroomlijnen en het hernoemen van bestanden te automatiseren volgens de bedrijfsnaamconventies, wat de handmatige verwerkingstijd aanzienlijk verminderde.">
+            Developed an internal web application using Spring Boot (backend) and React (frontend) to streamline Revit PDF file sharing and automate file renaming according to company naming conventions, significantly reducing manual processing time.
+          </p>
         </div>
 
-        <div class="experience-card">
-          <div class="experience-card__content">
-            <div class="experience-card__header">
-              <h3 class="experience-card__company">XSS BVBA</h3>
-              <span class="experience-card__role" data-en="Internship Observation" data-nl="Stage Observatie">Internship Observation</span>
-            </div>
-
-            <p class="experience-card__description" data-en="Diamond Administration India Pvt Ltd is a subsidiary of XSS BVBA, a Belgian software company that has been serving the diamond industry for over 25 years. The company has clients in Belgium, Hong Kong, Dubai, and Thailand." data-nl="Diamond Administration India Pvt Ltd is een dochteronderneming van XSS BVBA, een Belgisch softwarebedrijf dat al meer dan 25 jaar de diamantindustrie bedient. Het bedrijf heeft klanten in België, Hongkong, Dubai en Thailand.">
-              Diamond Administration India Pvt Ltd is a subsidiary of XSS BVBA, a Belgian software company that has been serving the diamond industry for over 25 years. The company has clients in Belgium, Hong Kong, Dubai, and Thailand.
-            </p>
-
-            <p class="experience-card__description" data-en="The team in India consists of 11 employees, while the Belgium office has 5. During my observation, I learned about their Bidding Project — a website for estimating and bidding on polished stones in a tender." data-nl="Het team in India bestaat uit 11 medewerkers, terwijl het kantoor in België er 5 heeft. Tijdens mijn observatie leerde ik over hun Bidding Project — een website voor het inschatten en bieden op gepolijste stenen in een tender.">
-              The team in India consists of 11 employees, while the Belgium office has 5. During my observation, I learned about their Bidding Project — a website for estimating and bidding on polished stones in a tender.
-            </p>
-
-            <div class="experience-card__tech">
-              <span>Angular</span>
-              <span>PrimeNG</span>
-              <span>C# .NET Core</span>
-              <span>Zoho Project</span>
-              <span>Selenium</span>
-              <span>Cucumber</span>
-            </div>
-          </div>
-
-          <div class="experience-card__logo">
-            <img src="images/XSS logo.png" alt="XSS BVBA Logo">
-          </div>
-        </div>
-      </section>
-
-      <!-- Work Environment Details -->
-      <section class="section">
-        <div class="section__header">
-          <span class="section__number" data-en="Environment" data-nl="Omgeving">Environment</span>
-          <h2 class="section__title" data-en="What I" data-nl="Wat ik">What I <span data-en="learned" data-nl="leerde">learned</span></h2>
-        </div>
-
-        <div class="projects-list">
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">01</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Professional Workflow" data-nl="Professionele Workflow">Professional Workflow</h3>
-              <span class="project-item__tech" data-en="Daily standup meetings, code reviews, peer programming" data-nl="Dagelijkse stand-up meetings, code reviews, peer programming">Daily standup meetings, code reviews, peer programming</span>
-            </div>
-            <span class="project-item__arrow"></span>
-          </div>
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">02</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Modern Tech Stack" data-nl="Moderne Tech Stack">Modern Tech Stack</h3>
-              <span class="project-item__tech" data-en="Angular + PrimeNG frontend, C# .NET Core backend" data-nl="Angular + PrimeNG frontend, C# .NET Core backend">Angular + PrimeNG frontend, C# .NET Core backend</span>
-            </div>
-            <span class="project-item__arrow"></span>
-          </div>
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">03</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Testing Practices" data-nl="Testpraktijken">Testing Practices</h3>
-              <span class="project-item__tech" data-en="Selenium with Java using Cucumber framework" data-nl="Selenium met Java met Cucumber framework">Selenium with Java using Cucumber framework</span>
-            </div>
-            <span class="project-item__arrow"></span>
-          </div>
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">04</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Project Management" data-nl="Projectbeheer">Project Management</h3>
-              <span class="project-item__tech" data-en="Zoho Project for task tracking and team collaboration" data-nl="Zoho Project voor taakbeheer en teamsamenwerking">Zoho Project for task tracking and team collaboration</span>
-            </div>
-            <span class="project-item__arrow"></span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Office Structure -->
-      <section class="section section--alt">
-        <div class="section__header">
-          <span class="section__number" data-en="Structure" data-nl="Structuur">Structure</span>
-          <h2 class="section__title" data-en="Team" data-nl="Team">Team <span data-en="composition" data-nl="samenstelling">composition</span></h2>
-        </div>
-        <p style="color: var(--text-secondary); max-width: 700px; font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;" data-en="The office is organized by department, with separate rooms for directors and IT heads, plus a meeting room. Besides developers, the team includes UI/UX designers, business analysts, and testers. The workplace atmosphere is professional and structured." data-nl="Het kantoor is per afdeling ingedeeld, met aparte kamers voor directeurs en IT-hoofden, plus een vergaderruimte. Naast ontwikkelaars zijn er ook UI/UX-designers, business analisten en testers aanwezig. De werksfeer is professioneel en gestructureerd.">
-          The office is organized by department, with separate rooms for directors and IT heads, plus a meeting room. Besides developers, the team includes UI/UX designers, business analysts, and testers. The workplace atmosphere is professional and structured.
-        </p>
-
-        <div class="about__stats" style="max-width: 600px;">
-          <div class="stat">
-            <span class="stat__number">11</span>
-            <span class="stat__label" data-en="Team India" data-nl="Team India">Team India</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">5</span>
-            <span class="stat__label" data-en="Team Belgium" data-nl="Team België">Team Belgium</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">25+</span>
-            <span class="stat__label" data-en="Years in business" data-nl="Jaar in bedrijf">Years in business</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">4</span>
-            <span class="stat__label" data-en="Countries served" data-nl="Landen bediend">Countries served</span>
-          </div>
+        <div>
+          <h3 class="fs-5 fw-semibold mb-1" data-en="Junior BIM Developer" data-nl="Junior BIM Ontwikkelaar">Junior BIM Developer</h3>
+          <span class="font-mono small text-muted" data-en="July 2024 – November 2024" data-nl="Juli 2024 – November 2024">July 2024 – November 2024</span>
+          <p class="fs-5 text-secondary mt-3" style="max-width: 700px; line-height: 1.8;" data-en="Created basic 3D models in Revit for CLT architectural projects and supported the team with BIM-related tasks." data-nl="Maakte basis 3D-modellen in Revit voor CLT-architectuurprojecten en ondersteunde het team met BIM-gerelateerde taken.">
+            Created basic 3D models in Revit for CLT architectural projects and supported the team with BIM-related tasks.
+          </p>
         </div>
       </section>
 
       <!-- CTA Section -->
-      <section class="section">
-        <div class="contact-grid">
-          <div class="contact__cta">
-            <h2 class="contact__cta-text" data-en="Want to know more?" data-nl="Wil je meer weten?">
-              Want to know<br><span data-en="more" data-nl="meer">more</span>?
+      <section class="py-5 px-4 px-lg-5 border-top border-custom">
+        <div class="row g-5">
+          <div class="col-lg-7 d-flex flex-column justify-content-center">
+            <h2 class="display-6 fw-bold mb-4" data-en="Want to know more?" data-nl="Wil je meer weten?">
+              Want to know<br><span class="text-accent" data-en="more" data-nl="meer">more</span>?
             </h2>
-            <a href="documents/Neeraj resume.pdf" class="btn btn--primary" data-en="View Full CV" data-nl="Bekijk Volledig CV">View Full CV</a>
+            <div><a href="documents/Neeraj resume.pdf" class="btn btn--primary" data-en="View Full CV" data-nl="Bekijk Volledig CV">View Full CV</a></div>
           </div>
-          <div class="contact__info">
-            <h3 data-en="Get in touch" data-nl="Neem contact op">Get in touch</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;" data-en="Interested in working together or have questions about my experience?" data-nl="Geïnteresseerd in samenwerking of vragen over mijn ervaring?">Interested in working together or have questions about my experience?</p>
+          <div class="col-lg-5">
+            <h3 class="mb-3" data-en="Get in touch" data-nl="Neem contact op">Get in touch</h3>
+            <p class="text-secondary mb-3" data-en="Interested in working together or have questions about my experience?" data-nl="Geïnteresseerd in samenwerking of vragen over mijn ervaring?">Interested in working together or have questions about my experience?</p>
             <a href="contact.html" class="btn" data-en="Contact Me" data-nl="Contacteer Mij">Contact Me →</a>
           </div>
         </div>
       </section>
 
       <!-- Footer -->
-      <footer class="footer">
-        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
-        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      <footer class="d-flex justify-content-between align-items-center py-3 px-4 border-top border-custom">
+        <p class="footer__text mb-0">© 2025 Neeraj</p>
+        <a href="#" class="footer__text">Back to top ↑</a>
       </footer>
     </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

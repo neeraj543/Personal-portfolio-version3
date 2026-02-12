@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Neeraj</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="site-wrapper">
+  <div class="d-flex min-vh-100">
     <!-- Side Navigation -->
-    <nav class="side-nav">
+    <nav class="side-nav d-none d-md-flex">
       <a href="index.html" class="side-nav__logo">N.</a>
       <ul class="side-nav__links">
         <li><a href="index.html" class="side-nav__link">Home</a></li>
@@ -26,144 +29,151 @@
     </nav>
 
     <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
-      <a href="index.html" class="mobile-nav__logo">N.</a>
-      <button class="mobile-nav__toggle" onclick="toggleMobileMenu()">☰</button>
+    <nav class="navbar fixed-top d-md-none border-bottom border-custom" style="background: var(--bg-secondary);">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand font-mono fw-bold text-accent">N.</a>
+        <button class="btn btn-link text-white fs-4 p-0 border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">&#9776;</button>
+      </div>
     </nav>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html" class="mobile-menu__link">Home</a>
-      <a href="about.html" class="mobile-menu__link">About</a>
-      <a href="projects.html" class="mobile-menu__link">Work</a>
-      <a href="workspace.html" class="mobile-menu__link">Experience</a>
-      <a href="contact.html" class="mobile-menu__link">Contact</a>
-      <a href="documents/Neeraj resume.pdf" class="mobile-menu__link">CV ↗</a>
+    <div class="offcanvas offcanvas-end bg-dark" id="mobileMenu">
+      <div class="offcanvas-header border-bottom border-custom">
+        <h5 class="offcanvas-title font-mono text-accent fw-bold">N.</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column gap-3 pt-4">
+        <a href="index.html" class="mobile-menu__link fs-4 fw-semibold">Home</a>
+        <a href="about.html" class="mobile-menu__link fs-4 fw-semibold">About</a>
+        <a href="projects.html" class="mobile-menu__link fs-4 fw-semibold">Work</a>
+        <a href="workspace.html" class="mobile-menu__link fs-4 fw-semibold">Experience</a>
+        <a href="contact.html" class="mobile-menu__link fs-4 fw-semibold">Contact</a>
+        <a href="documents/Neeraj resume.pdf" class="mobile-menu__link fs-4 fw-semibold">CV ↗</a>
+      </div>
     </div>
 
     <!-- Main Content -->
-    <main class="main-content page-transition">
+    <main class="main-content flex-grow-1">
       <!-- Hero Section -->
-      <section class="section" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center;">
-        <div class="section__header">
-          <span class="section__number">About</span>
-          <h1 class="section__title" style="font-size: clamp(2.5rem, 6vw, 4.5rem);">
-            <span data-en="I build things" data-nl="Ik bouw dingen">I build things</span><br>
-            <span data-en="for the web" data-nl="voor het web" class="text-muted">for the web</span>
-          </h1>
-        </div>
+      <section class="d-flex flex-column justify-content-center py-5 px-4 px-lg-5" style="min-height: 60vh;">
+        <span class="section-label" data-en="about" data-nl="over mij">about</span>
+        <h1 class="display-4 fw-bold">
+          <span data-en="I build things" data-nl="Ik bouw dingen">I build things</span><br>
+          <span class="text-muted" data-en="for the web" data-nl="voor het web">for the web</span>
+        </h1>
       </section>
 
       <!-- About Content -->
-      <section class="section">
-        <div class="about-grid">
-          <div class="about__text">
-            <p data-en="Hello! I'm Neeraj, a full-stack developer based in Belgium. I graduated from Thomas More Antwerpen where I developed a strong foundation in programming and software development." data-nl="Hallo! Ik ben Neeraj, een full-stack ontwikkelaar gevestigd in België. Ik ben afgestudeerd aan Thomas More Antwerpen waar ik een sterke basis heb ontwikkeld in programmeren en softwareontwikkeling.">
-              Hello! I'm Neeraj, a full-stack developer based in Belgium. I graduated from Thomas More Antwerpen where I developed a strong foundation in programming and software development.
+      <section class="py-5 px-4 px-lg-5 border-top border-custom">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <p class="fs-5 text-secondary mb-3" style="line-height: 1.8;" data-en="Final-year Computer Programming student at Thomas More (Antwerp) with hands-on experience in full-stack development using Spring Boot, React, and Next.js. Through academic projects, I have worked on building REST APIs, integrating frontend and backend systems, and applying object-oriented programming principles." data-nl="Laatstejaars programmeerstudent aan Thomas More (Antwerpen) met praktijkervaring in full-stack ontwikkeling met Spring Boot, React en Next.js. Via academische projecten heb ik gewerkt aan het bouwen van REST API's, het integreren van frontend- en backendsystemen en het toepassen van objectgeoriënteerde programmeerprincipes.">
+              Final-year Computer Programming student at Thomas More (Antwerp) with hands-on experience in full-stack development using Spring Boot, React, and Next.js. Through academic projects, I have worked on building REST APIs, integrating frontend and backend systems, and applying object-oriented programming principles.
             </p>
-            <p data-en="My expertise spans across object-oriented programming, JavaScript, and the Spring Boot framework. I have a solid understanding of HTML, CSS, and relational databases, allowing me to handle challenges from front-end to back-end development." data-nl="Mijn expertise strekt zich uit over objectgeoriënteerd programmeren, JavaScript en het Spring Boot framework. Ik heb een gedegen begrip van HTML, CSS en relationele databases, waardoor ik uitdagingen aankan van front-end tot back-end ontwikkeling.">
-              My expertise spans across object-oriented programming, JavaScript, and the Spring Boot framework. I have a solid understanding of HTML, CSS, and relational databases, allowing me to handle challenges from front-end to back-end development.
+            <p class="fs-5 text-secondary mb-3" style="line-height: 1.8;" data-en="I am motivated to continue learning, adaptable to different technologies, and eager to contribute as a reliable team member." data-nl="Ik ben gemotiveerd om te blijven leren, aanpasbaar aan verschillende technologieën en enthousiast om bij te dragen als een betrouwbaar teamlid.">
+              I am motivated to continue learning, adaptable to different technologies, and eager to contribute as a reliable team member.
             </p>
-            <p data-en="I moved to Belgium in 2022 to pursue my studies, joining my parents who were already working here. Outside of coding, I enjoy playing badminton and watching series." data-nl="Ik ben in 2022 naar België verhuisd om mijn studies te volgen en me bij mijn ouders te voegen die hier al werkten. Buiten het coderen geniet ik van badminton en het kijken van series.">
+            <p class="fs-5 text-secondary mb-4" style="line-height: 1.8;" data-en="I moved to Belgium in 2022 to pursue my studies, joining my parents who were already working here. Outside of coding, I enjoy playing badminton and watching series." data-nl="Ik ben in 2022 naar België verhuisd om mijn studies te volgen en me bij mijn ouders te voegen die hier al werkten. Buiten het coderen geniet ik van badminton en het kijken van series.">
               I moved to Belgium in 2022 to pursue my studies, joining my parents who were already working here. Outside of coding, I enjoy playing badminton and watching series.
             </p>
 
-            <div class="about__stats">
-              <div class="stat">
-                <span class="stat__number">19</span>
-                <span class="stat__label" data-en="Years old" data-nl="Jaar oud">Years old</span>
+            <!-- Stat Strip -->
+            <div class="stat-strip mt-4">
+              <div class="stat-strip__item">
+                <span class="stat-strip__number">22</span>
+                <span class="stat-strip__label" data-en="Years old" data-nl="Jaar oud">Years old</span>
               </div>
-              <div class="stat">
-                <span class="stat__number">3+</span>
-                <span class="stat__label" data-en="Projects completed" data-nl="Projecten voltooid">Projects completed</span>
+              <div class="stat-strip__item">
+                <span class="stat-strip__number">5+</span>
+                <span class="stat-strip__label" data-en="Projects" data-nl="Projecten">Projects</span>
               </div>
-              <div class="stat">
-                <span class="stat__number">1</span>
-                <span class="stat__label" data-en="Internship" data-nl="Stage">Internship</span>
+              <div class="stat-strip__item">
+                <span class="stat-strip__number">1</span>
+                <span class="stat-strip__label" data-en="Internship" data-nl="Stage">Internship</span>
               </div>
-              <div class="stat">
-                <span class="stat__number">∞</span>
-                <span class="stat__label" data-en="Curiosity" data-nl="Nieuwsgierigheid">Curiosity</span>
+              <div class="stat-strip__item">
+                <span class="stat-strip__number">∞</span>
+                <span class="stat-strip__label" data-en="Curiosity" data-nl="Nieuwsgierigheid">Curiosity</span>
               </div>
             </div>
           </div>
-          <div class="about__image">
-            <img src="images/Neerajphotograph.jpg" alt="Neeraj">
-            <span class="about__image-caption" data-en="That's me" data-nl="Dat ben ik">That's me</span>
+          <div class="col-lg-5">
+            <div class="position-relative">
+              <img src="images/Neerajphotograph.jpg" alt="Neeraj" class="w-100" style="aspect-ratio: 4/5; object-fit: cover; object-position: top;">
+              <span class="about__image-caption" data-en="That's me" data-nl="Dat ben ik">That's me</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Skills Section -->
-      <section class="section section--alt">
-        <div class="section__header">
-          <span class="section__number">Skills</span>
-          <h2 class="section__title" data-en="Technologies I work with" data-nl="Technologieën waarmee ik werk">Technologies <span data-en="I work with" data-nl="waarmee ik werk">I work with</span></h2>
-        </div>
-        <div class="skills-container">
+      <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
+        <span class="section-label" data-en="skills" data-nl="vaardigheden">skills</span>
+        <h2 class="display-6 fw-bold mb-4" data-en="Technologies I work with" data-nl="Technologieën waarmee ik werk">Technologies <span class="text-secondary fw-light" data-en="I work with" data-nl="waarmee ik werk">I work with</span></h2>
+        <div class="d-flex flex-wrap gap-2 mt-3">
           <span class="skill-tag">Java</span>
           <span class="skill-tag">Spring Boot</span>
           <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">Angular</span>
-          <span class="skill-tag">PrimeNG</span>
-          <span class="skill-tag">C#</span>
-          <span class="skill-tag">.NET Core</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Next.js</span>
           <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
+          <span class="skill-tag">CSS</span>
           <span class="skill-tag">Bootstrap</span>
           <span class="skill-tag">Thymeleaf</span>
           <span class="skill-tag">SQL</span>
           <span class="skill-tag">H2 Database</span>
           <span class="skill-tag">Git</span>
-          <span class="skill-tag">Selenium</span>
-          <span class="skill-tag">Cucumber</span>
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">Cypress</span>
         </div>
       </section>
 
       <!-- Education & Background -->
-      <section class="section">
-        <div class="section__header">
-          <span class="section__number">Background</span>
-          <h2 class="section__title" data-en="Education &" data-nl="Onderwijs &">Education & <span data-en="journey" data-nl="reis">journey</span></h2>
-        </div>
-        <div class="projects-list">
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">2022</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title">Thomas More Antwerpen</h3>
-              <span class="project-item__tech" data-en="Graduated Programmer • Sint-Andries" data-nl="Afgestudeerd Programmeur • Sint-Andries">Graduated Programmer • Sint-Andries</span>
+      <section class="py-5 px-4 px-lg-5 border-top border-custom">
+        <span class="section-label" data-en="background" data-nl="achtergrond">background</span>
+        <h2 class="display-6 fw-bold mb-4" data-en="Education &" data-nl="Onderwijs &">Education & <span class="text-secondary fw-light" data-en="journey" data-nl="reis">journey</span></h2>
+        <div>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2025</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1">Thomas More Antwerpen</h3>
+              <span class="font-mono small text-muted" data-en="Final Year • Programming" data-nl="Laatste Jaar • Programmeren">Final Year • Programming</span>
             </div>
-            <span class="project-item__arrow"></span>
           </div>
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">2021</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Retail Experience" data-nl="Winkel Ervaring">Retail Experience</h3>
-              <span class="project-item__tech" data-en="Store Assistant • 3 months" data-nl="Winkelbediende • 3 maanden">Store Assistant • 3 months</span>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2024</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="CLT PRT — Software Development Intern" data-nl="CLT PRT — Software Ontwikkelaar Stagiair">CLT PRT — Software Development Intern</h3>
+              <span class="font-mono small text-muted" data-en="Nov 2024 – Jan 2025 • Spring Boot & React" data-nl="Nov 2024 – Jan 2025 • Spring Boot & React">Nov 2024 – Jan 2025 • Spring Boot & React</span>
             </div>
-            <span class="project-item__arrow"></span>
           </div>
-          <div class="project-item" style="cursor: default;">
-            <span class="project-item__number">2020</span>
-            <div class="project-item__info">
-              <h3 class="project-item__title" data-en="Tutoring" data-nl="Bijles">Tutoring</h3>
-              <span class="project-item__tech" data-en="Teaching kids aged 7-14 • High School" data-nl="Les geven aan kinderen van 7-14 • Middelbare school">Teaching kids aged 7-14 • High School</span>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2024</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="CLT PRT — Junior BIM Developer" data-nl="CLT PRT — Junior BIM Ontwikkelaar">CLT PRT — Junior BIM Developer</h3>
+              <span class="font-mono small text-muted" data-en="Jul 2024 – Nov 2024 • Revit & BIM" data-nl="Jul 2024 – Nov 2024 • Revit & BIM">Jul 2024 – Nov 2024 • Revit & BIM</span>
             </div>
-            <span class="project-item__arrow"></span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2020</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="Tutoring" data-nl="Bijles">Tutoring</h3>
+              <span class="font-mono small text-muted" data-en="Teaching kids aged 7-14 • High School" data-nl="Les geven aan kinderen van 7-14 • Middelbare school">Teaching kids aged 7-14 • High School</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- CTA Section -->
-      <section class="section section--alt">
-        <div class="contact-grid">
-          <div class="contact__cta">
-            <h2 class="contact__cta-text" data-en="Want to work together? Let's" data-nl="Wil je samenwerken? Laten we">
-              Want to work together?<br>Let's <span data-en="connect" data-nl="contact opnemen">connect</span>
+      <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
+        <div class="row g-5">
+          <div class="col-lg-7 d-flex flex-column justify-content-center">
+            <h2 class="display-6 fw-bold mb-4" data-en="Want to work together? Let's" data-nl="Wil je samenwerken? Laten we">
+              Want to work together?<br>Let's <span class="text-accent" data-en="connect" data-nl="contact opnemen">connect</span>
             </h2>
-            <a href="contact.html" class="btn btn--primary" data-en="Get in Touch" data-nl="Neem Contact Op">Get in Touch</a>
+            <div><a href="contact.html" class="btn btn--primary" data-en="Get in Touch" data-nl="Neem Contact Op">Get in Touch</a></div>
           </div>
-          <div class="contact__info">
-            <h3 data-en="Quick Links" data-nl="Snelle Links">Quick Links</h3>
-            <div class="social-links">
+          <div class="col-lg-5">
+            <h3 class="mb-3" data-en="Quick Links" data-nl="Snelle Links">Quick Links</h3>
+            <div class="d-flex gap-3">
               <a href="https://github.com/neeraj543" target="_blank" class="social-link">GH</a>
               <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link">LI</a>
               <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link">IG</a>
@@ -173,13 +183,15 @@
       </section>
 
       <!-- Footer -->
-      <footer class="footer">
-        <p class="footer__copyright">© 2024 Neeraj. All rights reserved.</p>
-        <a href="#" class="footer__back-to-top">Back to top ↑</a>
+      <footer class="d-flex justify-content-between align-items-center py-3 px-4 border-top border-custom">
+        <p class="footer__text mb-0">© 2025 Neeraj</p>
+        <a href="#" class="footer__text">Back to top ↑</a>
       </footer>
     </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

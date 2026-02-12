@@ -1,8 +1,19 @@
 /**
  * NEERAJ Portfolio - Main JavaScript
- * ===================================
- * Handles: Language toggle, Mobile menu, Smooth scroll
+ * Handles: AOS init, Language toggle, Smooth scroll, Active nav
  */
+
+// ============================================
+// AOS INITIALIZATION
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80
+  });
+});
 
 // ============================================
 // LANGUAGE TOGGLE (English / Dutch)
@@ -12,7 +23,6 @@ let currentLang = 'en';
 function toggleLanguage() {
   currentLang = currentLang === 'en' ? 'nl' : 'en';
 
-  // Update all elements with data-en and data-nl attributes
   document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute(`data-${currentLang}`);
     if (text) {
@@ -20,7 +30,6 @@ function toggleLanguage() {
     }
   });
 
-  // Update the toggle button text to show current language
   const toggleBtn = document.querySelector('.lang-toggle');
   if (toggleBtn) {
     toggleBtn.textContent = currentLang.toUpperCase();
@@ -28,33 +37,24 @@ function toggleLanguage() {
 }
 
 // ============================================
-// MOBILE MENU
+// MOBILE MENU (Bootstrap Offcanvas)
+// Close offcanvas when a link is clicked
 // ============================================
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  if (menu) {
-    menu.classList.toggle('open');
-  }
-}
-
-// Close mobile menu when clicking a link
 document.addEventListener('DOMContentLoaded', () => {
-  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const menu = document.getElementById('mobileMenu');
-      if (menu) {
-        menu.classList.remove('open');
-      }
+  const offcanvasEl = document.getElementById('mobileMenu');
+  if (offcanvasEl) {
+    const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+    offcanvasEl.querySelectorAll('.mobile-menu__link').forEach(link => {
+      link.addEventListener('click', () => bsOffcanvas.hide());
     });
-  });
+  }
 });
 
 // ============================================
 // SMOOTH SCROLL TO TOP
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  const backToTop = document.querySelector('.footer__back-to-top');
+  const backToTop = document.querySelector('.footer__text[href="#"]');
   if (backToTop) {
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
@@ -67,10 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // ACTIVE NAV LINK HIGHLIGHT
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Get current page filename
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-  // Highlight active link in side nav
   document.querySelectorAll('.side-nav__link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage) {
@@ -80,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Highlight active link in mobile nav
   document.querySelectorAll('.mobile-menu__link').forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPage) {
@@ -88,3 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
