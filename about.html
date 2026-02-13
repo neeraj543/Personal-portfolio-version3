@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -53,7 +54,7 @@
     <!-- Main Content -->
     <main class="main-content flex-grow-1">
       <!-- Hero Section -->
-      <section class="d-flex flex-column justify-content-center py-5 px-4 px-lg-5" style="min-height: 60vh;">
+      <section class="d-flex flex-column justify-content-center py-4 px-4 px-lg-5" style="min-height: 30vh;">
         <span class="section-label" data-en="about" data-nl="over mij">about</span>
         <h1 class="display-4 fw-bold">
           <span data-en="I build things" data-nl="Ik bouw dingen">I build things</span><br>
@@ -89,10 +90,6 @@
                 <span class="stat-strip__number">1</span>
                 <span class="stat-strip__label" data-en="Internship" data-nl="Stage">Internship</span>
               </div>
-              <div class="stat-strip__item">
-                <span class="stat-strip__number">∞</span>
-                <span class="stat-strip__label" data-en="Curiosity" data-nl="Nieuwsgierigheid">Curiosity</span>
-              </div>
             </div>
           </div>
           <div class="col-lg-5">
@@ -127,42 +124,81 @@
         </div>
       </section>
 
+      <!-- Languages -->
+      <section class="py-5 px-4 px-lg-5 border-top border-custom">
+        <span class="section-label" data-en="languages" data-nl="talen">languages</span>
+        <h2 class="display-6 fw-bold mb-4" data-en="Languages I" data-nl="Talen die ik">Languages I <span class="text-secondary fw-light" data-en="speak" data-nl="spreek">speak</span></h2>
+        <div class="stat-strip">
+          <div class="stat-strip__item">
+            <span class="stat-strip__number" style="font-size: 1.25rem;">English</span>
+            <span class="stat-strip__label" data-en="Fluent" data-nl="Vloeiend">Fluent</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__number" style="font-size: 1.25rem;" data-en="Dutch" data-nl="Nederlands">Dutch</span>
+            <span class="stat-strip__label" data-en="Intermediate" data-nl="Gemiddeld">Intermediate</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__number" style="font-size: 1.25rem;">Hindi</span>
+            <span class="stat-strip__label" data-en="Intermediate" data-nl="Gemiddeld">Intermediate</span>
+          </div>
+          <div class="stat-strip__item">
+            <span class="stat-strip__number" style="font-size: 1.25rem;">Malayalam</span>
+            <span class="stat-strip__label" data-en="Fluent" data-nl="Vloeiend">Fluent</span>
+          </div>
+        </div>
+      </section>
+
       <!-- Education & Background -->
       <section class="py-5 px-4 px-lg-5 border-top border-custom">
         <span class="section-label" data-en="background" data-nl="achtergrond">background</span>
         <h2 class="display-6 fw-bold mb-4" data-en="Education &" data-nl="Onderwijs &">Education & <span class="text-secondary fw-light" data-en="journey" data-nl="reis">journey</span></h2>
         <div>
           <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2026</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="Thomas More — Sint-Andries, Antwerp" data-nl="Thomas More — Sint-Andries, Antwerpen">Thomas More — Sint-Andries, Antwerp</h3>
+              <span class="font-mono small text-muted" data-en="Associate Degree of Applied Sciences Programming (Graduaat Programmeren) • Expected 2026" data-nl="Graduaat Toegepaste Wetenschappen Programmeren (Graduaat Programmeren) • Verwacht 2026">Associate Degree of Applied Sciences Programming (Graduaat Programmeren) • Expected 2026</span>
+            </div>
+          </div>
+          <div class="timeline-item">
             <span class="timeline-item__year d-none d-md-block">2025</span>
             <div>
-              <h3 class="fs-5 fw-semibold mb-1">Thomas More Antwerpen</h3>
-              <span class="font-mono small text-muted" data-en="Final Year • Programming" data-nl="Laatste Jaar • Programmeren">Final Year • Programming</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-item__year d-none d-md-block">2024</span>
-            <div>
               <h3 class="fs-5 fw-semibold mb-1" data-en="CLT PRT — Software Development Intern" data-nl="CLT PRT — Software Ontwikkelaar Stagiair">CLT PRT — Software Development Intern</h3>
-              <span class="font-mono small text-muted" data-en="Nov 2024 – Jan 2025 • Spring Boot & React" data-nl="Nov 2024 – Jan 2025 • Spring Boot & React">Nov 2024 – Jan 2025 • Spring Boot & React</span>
+              <span class="font-mono small text-muted" data-en="Nov 2025 – Jan 2026 • Spring Boot & React" data-nl="Nov 2025 – Jan 2026 • Spring Boot & React">Nov 2025 – Jan 2026 • Spring Boot & React</span>
             </div>
           </div>
           <div class="timeline-item">
-            <span class="timeline-item__year d-none d-md-block">2024</span>
+            <span class="timeline-item__year d-none d-md-block">2025</span>
             <div>
               <h3 class="fs-5 fw-semibold mb-1" data-en="CLT PRT — Junior BIM Developer" data-nl="CLT PRT — Junior BIM Ontwikkelaar">CLT PRT — Junior BIM Developer</h3>
-              <span class="font-mono small text-muted" data-en="Jul 2024 – Nov 2024 • Revit & BIM" data-nl="Jul 2024 – Nov 2024 • Revit & BIM">Jul 2024 – Nov 2024 • Revit & BIM</span>
+              <span class="font-mono small text-muted" data-en="Jul 2025 – Nov 2025 • Revit & BIM" data-nl="Jul 2025 – Nov 2025 • Revit & BIM">Jul 2025 – Nov 2025 • Revit & BIM</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2022</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="ILT — Instituut voor Levende Talen" data-nl="ILT — Instituut voor Levende Talen">ILT — Instituut voor Levende Talen</h3>
+              <span class="font-mono small text-muted" data-en="One year Dutch language course • 2022 – 2023" data-nl="Een jaar Nederlandse taalcursus • 2022 – 2023">One year Dutch language course • 2022 – 2023</span>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-item__year d-none d-md-block">2020</span>
             <div>
-              <h3 class="fs-5 fw-semibold mb-1" data-en="Tutoring" data-nl="Bijles">Tutoring</h3>
-              <span class="font-mono small text-muted" data-en="Teaching kids aged 7-14 • High School" data-nl="Les geven aan kinderen van 7-14 • Middelbare school">Teaching kids aged 7-14 • High School</span>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="MGM School — Thiruvananthapuram, Kerala, India" data-nl="MGM School — Thiruvananthapuram, Kerala, India">MGM School — Thiruvananthapuram, Kerala, India</h3>
+              <span class="font-mono small text-muted" data-en="High School Diploma • 11th & 12th • 2020 – 2022" data-nl="Middelbaar Diploma • 11e & 12e • 2020 – 2022">High School Diploma • 11th & 12th • 2020 – 2022</span>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-item__year d-none d-md-block">2017</span>
+            <div>
+              <h3 class="fs-5 fw-semibold mb-1" data-en="Antwerp International School (AIS) — Ekeren, Belgium" data-nl="Antwerp International School (AIS) — Ekeren, Belgi&euml;">Antwerp International School (AIS) — Ekeren, Belgium</h3>
+              <span class="font-mono small text-muted" data-en="Middle School • 8th to 10th Grade • 2017 – 2019" data-nl="Middelbare School • 8e tot 10e Klas • 2017 – 2019">Middle School • 8th to 10th Grade • 2017 – 2019</span>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- todo -->
       <!-- CTA Section -->
       <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
         <div class="row g-5">
@@ -175,9 +211,9 @@
           <div class="col-lg-5">
             <h3 class="mb-3" data-en="Quick Links" data-nl="Snelle Links">Quick Links</h3>
             <div class="d-flex gap-3">
-              <a href="https://github.com/neeraj543" target="_blank" class="social-link">GH</a>
-              <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link">LI</a>
-              <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link">IG</a>
+              <a href="https://github.com/neeraj543" target="_blank" class="social-link" title="GitHub">GH</a>
+              <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link" title="LinkedIn">LI</a>
+              <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link" title="Instagram">IG</a>
             </div>
           </div>
         </div>
@@ -185,7 +221,7 @@
 
       <!-- Footer -->
       <footer class="d-flex justify-content-between align-items-center py-3 px-4 border-top border-custom">
-        <p class="footer__text mb-0">© 2025 Neeraj</p>
+        <p class="footer__text mb-0">© 2026 Neeraj</p>
         <a href="#" class="footer__text">Back to top ↑</a>
       </footer>
     </main>

@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -52,78 +53,57 @@
 
     <!-- Main Content -->
     <main class="main-content flex-grow-1">
-      <!-- Hero Section — Big Email -->
-      <section class="d-flex flex-column justify-content-center py-5 px-4 px-lg-5" style="min-height: 70vh;">
+      <!-- Hero + Email CTA -->
+      <section class="d-flex flex-column justify-content-center py-5 px-4 px-lg-5" style="min-height: 50vh;">
         <span class="section-label" data-en="contact" data-nl="contact">contact</span>
         <h1 class="display-4 fw-bold">
           <span data-en="Let's work" data-nl="Laten we">Let's work</span><br>
           <span class="text-muted" data-en="together" data-nl="samenwerken">together</span>
         </h1>
-        <p class="fs-5 text-secondary mt-3" style="max-width: 500px; line-height: 1.8;" data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision." data-nl="Ik sta altijd open om nieuwe projecten, creatieve ideeën of kansen om deel uit te maken van jouw visie te bespreken.">
+        <p class="fs-5 text-secondary mt-3 mb-4" style="max-width: 500px; line-height: 1.8;" data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision." data-nl="Ik sta altijd open om nieuwe projecten, creatieve ideeën of kansen om deel uit te maken van jouw visie te bespreken.">
           I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </p>
+        <a href="mailto:neeraj.sreeraj@gmail.com" class="contact__email-big">neeraj.sreeraj@gmail.com</a>
+        <div class="mt-4">
+          <a href="mailto:neeraj.sreeraj@gmail.com" class="btn btn--primary" data-en="Send Email" data-nl="Stuur E-mail">Send Email</a>
+        </div>
       </section>
 
-      <!-- Contact Info -->
+      <!-- Contact Details Strip -->
       <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
-        <div class="row g-5">
-          <div class="col-lg-7">
-            <span class="section-label" data-en="reach out" data-nl="neem contact op">reach out</span>
-            <h3 class="mb-4" data-en="Get in touch" data-nl="Neem contact op">Get in touch</h3>
-
-            <div class="mb-4">
-              <span class="contact__label">Email</span>
-              <a href="mailto:neeraj.sreeraj1235@gmail.com" class="contact__value">neeraj.sreeraj1235@gmail.com</a>
-            </div>
-
-            <div class="mb-4">
-              <span class="contact__label" data-en="Student Email" data-nl="Student E-mail">Student Email</span>
-              <a href="mailto:r1008394@student.thomasmore.be" class="contact__value">r1008394@student.thomasmore.be</a>
-            </div>
-
-            <div class="mb-4">
-              <span class="contact__label" data-en="Phone" data-nl="Telefoon">Phone</span>
-              <a href="tel:+32471936312" class="contact__value">+32 471 936 312</a>
-            </div>
-
-            <div class="mb-4">
-              <span class="contact__label" data-en="Location" data-nl="Locatie">Location</span>
-              <span class="contact__value" data-en="Belgium" data-nl="België">Belgium</span>
-            </div>
-
-            <div class="mt-4">
-              <span class="contact__label" data-en="Social" data-nl="Sociaal">Social</span>
-              <div class="d-flex gap-3 mt-2">
-                <a href="https://github.com/neeraj543" target="_blank" class="social-link">GH</a>
-                <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link">LI</a>
-                <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link">IG</a>
-              </div>
-            </div>
+        <span class="section-label" data-en="details" data-nl="gegevens">details</span>
+        <div class="contact-strip mt-3">
+          <div class="contact-strip__item">
+            <span class="contact__label">Email</span>
+            <a href="mailto:neeraj.sreeraj@gmail.com" class="contact__value">neeraj.sreeraj@gmail.com</a>
           </div>
+          <div class="contact-strip__item">
+            <span class="contact__label" data-en="Student Email" data-nl="Student E-mail">Student Email</span>
+            <a href="mailto:r1008394@student.thomasmore.be" class="contact__value contact__value--small">r1008394@student.thomasmore.be</a>
+          </div>
+          <div class="contact-strip__item">
+            <span class="contact__label" data-en="Phone" data-nl="Telefoon">Phone</span>
+            <span class="contact__value">+32 471 936 312</span>
+          </div>
+          <div class="contact-strip__item">
+            <span class="contact__label" data-en="Location" data-nl="Locatie">Location</span>
+            <span class="contact__value" data-en="Antwerp, Belgium" data-nl="Antwerpen, Belgi&euml;">Antwerp, Belgium</span>
+          </div>
+        </div>
 
-          <div class="col-lg-5 d-flex flex-column justify-content-center">
-            <h2 class="display-6 fw-bold mb-3">
-              <span data-en="neeraj.sreeraj1235" data-nl="neeraj.sreeraj1235">neeraj.sreeraj1235</span><br>
-              <span class="text-accent">@gmail.com</span>
-            </h2>
-            <div><a href="mailto:neeraj.sreeraj1235@gmail.com" class="btn btn--primary" data-en="Send Email" data-nl="Stuur E-mail">Send Email</a></div>
+        <div class="mt-5">
+          <span class="contact__label" data-en="Social" data-nl="Sociaal">Social</span>
+          <div class="d-flex gap-3 mt-2">
+            <a href="https://github.com/neeraj543" target="_blank" class="social-link social-link--wide" title="GitHub">GitHub</a>
+            <a href="https://linkedin.com/in/neeraj" target="_blank" class="social-link social-link--wide" title="LinkedIn">LinkedIn</a>
+            <a href="https://instagram.com/neerajjj.03" target="_blank" class="social-link social-link--wide" title="Instagram">Instagram</a>
           </div>
         </div>
       </section>
 
-      <!-- Education Reference -->
-      <section class="py-5 px-4 px-lg-5 border-top border-custom">
-        <span class="section-label" data-en="education" data-nl="onderwijs">education</span>
-        <h2 class="display-6 fw-bold mb-3">Thomas More <span class="text-secondary fw-light" data-en="Antwerpen" data-nl="Antwerpen">Antwerpen</span></h2>
-        <p class="fs-5 text-secondary mb-4" style="max-width: 600px; line-height: 1.8;" data-en="School of Applied Sciences, Sint-Andries campus. Final year programming student with expertise in full-stack development." data-nl="Hogeschool voor Toegepaste Wetenschappen, campus Sint-Andries. Laatstejaars programmeerstudent met expertise in full-stack ontwikkeling.">
-          School of Applied Sciences, Sint-Andries campus. Final year programming student with expertise in full-stack development.
-        </p>
-        <a href="https://thomasmore.be/nl" target="_blank" class="btn" data-en="Visit School Website" data-nl="Bezoek Schoolwebsite">Visit School Website →</a>
-      </section>
-
       <!-- Footer -->
       <footer class="d-flex justify-content-between align-items-center py-3 px-4 border-top border-custom">
-        <p class="footer__text mb-0">© 2025 Neeraj</p>
+        <p class="footer__text mb-0">© 2026 Neeraj</p>
         <a href="#" class="footer__text">Back to top ↑</a>
       </footer>
     </main>
