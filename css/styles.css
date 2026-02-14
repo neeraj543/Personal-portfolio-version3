@@ -1,18 +1,42 @@
+/*
+ * styles.css — Neeraj's Portfolio
+ *
+ * Dark-themed portfolio using Bootstrap 5 as a base.
+ * Custom styles below override Bootstrap defaults where needed.
+ *
+ * Design tokens (colours, fonts) are defined as CSS variables in :root
+ * so they can be reused consistently and changed in one place.
+ *
+ * The site is bilingual (EN/NL) — language switching is handled in
+ * script.js via data-en / data-nl attributes on HTML elements.
+ */
+
+
 /* ===== VARIABLES ===== */
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #111111;
-  --bg-accent: #1a1a1a;
-  --text-primary: #fafafa;
-  --text-secondary: #888888;
-  --text-muted: #777777;
+  /* Background colours — darkest to lightest */
+  --bg-primary: #0a0a0a;      /* main page background */
+  --bg-secondary: #111111;    /* side nav, alternate sections */
+  --bg-accent: #1a1a1a;      /* skill tags, subtle highlights */
+
+  /* Text colours — brightest to dimmest */
+  --text-primary: #fafafa;    /* headings, main text */
+  --text-secondary: #888888;  /* body paragraphs */
+  --text-muted: #777777;      /* labels, meta info */
+
+  /* Accent — neon yellow-green used for highlights, CTAs, active states */
   --accent: #e8ff47;
   --accent-hover: #d4eb3a;
+
+  /* Borders — used throughout for subtle dividers */
   --border: #222222;
   --border-light: #333333;
+
+  /* Fonts — Space Grotesk for body, Space Mono for code-like labels */
   --font-main: 'Space Grotesk', -apple-system, sans-serif;
   --font-mono: 'Space Mono', monospace;
 }
+
 
 /* ===== BASE OVERRIDES ===== */
 html { scroll-behavior: smooth; }
@@ -23,14 +47,20 @@ body {
   color: var(--text-primary);
 }
 
+/* Accent-coloured text selection for branding consistency */
 ::selection {
   background: var(--accent);
   color: var(--bg-primary);
 }
 
+/* Remove default link underlines — styling is handled per-component */
 a { color: inherit; text-decoration: none; }
 
-/* ===== SIDE NAVIGATION ===== */
+
+/* ===== SIDE NAVIGATION =====
+   Fixed 80px-wide bar on the left (desktop only).
+   Links use vertical text (writing-mode: vertical-rl).
+   On mobile (<768px) this is hidden and replaced by a Bootstrap offcanvas menu. */
 .side-nav {
   position: fixed;
   left: 0; top: 0;
@@ -40,9 +70,10 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  z-index: 1050;
+  z-index: 1050; /* above Bootstrap's default navbar z-index (1030) */
 }
 
+/* Logo rotated vertically to match the side-nav style */
 .side-nav__logo {
   font-family: var(--font-mono);
   font-size: 1.5rem; font-weight: 700;
@@ -60,6 +91,7 @@ a { color: inherit; text-decoration: none; }
   flex: 1; padding: 0; margin: 0;
 }
 
+/* Nav links — vertical text, highlighted in accent colour when active */
 .side-nav__link {
   writing-mode: vertical-rl;
   font-size: 0.75rem; font-weight: 500;
@@ -73,6 +105,7 @@ a { color: inherit; text-decoration: none; }
 
 .side-nav__footer { margin-top: auto; }
 
+/* EN/NL language toggle button at the bottom of the side nav */
 .lang-toggle {
   font-family: var(--font-mono);
   font-size: 0.7rem; color: var(--text-muted);
@@ -84,7 +117,10 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--accent); color: var(--accent);
 }
 
-/* ===== MAIN CONTENT OFFSET ===== */
+
+/* ===== MAIN CONTENT OFFSET =====
+   Pushed right by 80px to sit next to the side nav on desktop.
+   On mobile the side nav is hidden, so the offset is removed. */
 .main-content {
   margin-left: 80px; width: calc(100% - 80px);
 }
@@ -92,7 +128,9 @@ a { color: inherit; text-decoration: none; }
   .main-content { margin-left: 0; margin-top: 56px; width: 100%; }
 }
 
-/* ===== MOBILE NAV OVERRIDES ===== */
+
+/* ===== MOBILE NAV OVERRIDES =====
+   Overrides Bootstrap's offcanvas styling to match the dark theme. */
 .offcanvas.bg-dark { background-color: var(--bg-primary) !important; }
 .mobile-menu__link {
   color: var(--text-secondary);
@@ -102,7 +140,11 @@ a { color: inherit; text-decoration: none; }
 }
 .mobile-menu__link:hover { color: var(--accent); }
 
-/* ===== SECTION LABEL ( // comment motif ) ===== */
+
+/* ===== SECTION LABEL ( // comment motif ) =====
+   Small mono-spaced label that appears above section headings.
+   The ::before pseudo-element adds "// " to mimic a code comment,
+   tying into the developer theme of the portfolio. */
 .section-label {
   font-family: var(--font-mono);
   font-size: 0.8rem; color: var(--accent);
@@ -111,15 +153,20 @@ a { color: inherit; text-decoration: none; }
 }
 .section-label::before { content: '// '; }
 
+/* Alternate section background for visual separation between sections */
 .bg-section-alt { background: var(--bg-secondary); }
 
-/* ===== HERO — STACKED LAYOUT ===== */
+
+/* ===== HERO — STACKED LAYOUT =====
+   Large name display on the homepage. Uses clamp() for fluid sizing
+   so it scales nicely from mobile to desktop without media queries. */
 .hero-name {
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 700; line-height: 0.9;
   text-transform: uppercase; letter-spacing: -0.02em;
 }
 
+/* Horizontal bar of meta info below the hero name (role, location, year) */
 .status-bar {
   display: flex; flex-wrap: wrap; gap: 0;
   border-top: 1px solid var(--border);
@@ -138,6 +185,8 @@ a { color: inherit; text-decoration: none; }
   .status-bar__item { padding: 0.5rem 1rem; font-size: 0.7rem; }
 }
 
+/* Profile photo — grayscale by default, colour on hover.
+   Gives a subtle interactive feel without being distracting. */
 .hero__photo {
   width: 200px; max-width: 60%;
   aspect-ratio: 3/4; object-fit: cover; object-position: top;
@@ -149,13 +198,18 @@ a { color: inherit; text-decoration: none; }
   filter: none; mix-blend-mode: normal;
 }
 
-/* ===== SCROLL INDICATOR ===== */
+
+/* ===== SCROLL INDICATOR =====
+   Thin gradient line at the bottom of the hero, hinting to scroll down. */
 .hero__scroll-line {
   width: 1px; height: 60px;
   background: linear-gradient(to bottom, var(--accent), transparent);
 }
 
-/* ===== BUTTONS (override Bootstrap) ===== */
+
+/* ===== BUTTONS (override Bootstrap) =====
+   Custom button styles that replace Bootstrap's rounded, colourful defaults
+   with a flat, bordered look matching the portfolio's dark theme. */
 .btn {
   font-family: var(--font-main);
   font-size: 0.875rem; font-weight: 600;
@@ -170,13 +224,19 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--accent);
 }
 .btn:focus { box-shadow: none; }
+
+/* Primary variant — filled accent background by default */
 .btn--primary {
   background: var(--accent); color: var(--bg-primary);
   border-color: var(--accent);
 }
 .btn--primary:hover { background: var(--accent-hover); color: var(--bg-primary); }
 
-/* ===== PROJECT CARDS (hover image reveal) ===== */
+
+/* ===== PROJECT CARDS (hover image reveal) =====
+   Each card has a hidden background image (.project-card__bg) that
+   fades in on hover, with a dark overlay so text stays readable.
+   This creates a preview effect without cluttering the default view. */
 .project-card {
   position: relative; overflow: hidden;
   padding: 2rem 1.5rem;
@@ -184,30 +244,40 @@ a { color: inherit; text-decoration: none; }
   transition: 0.3s ease;
   display: flex; align-items: center;
 }
+
+/* Background image — hidden by default (opacity: 0), revealed on hover */
 .project-card__bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
   opacity: 0; transition: opacity 0.4s ease;
 }
+/* Dark overlay on the background image so text remains readable */
 .project-card__bg::after {
   content: ''; position: absolute; inset: 0;
   background: rgba(10, 10, 10, 0.85);
 }
 .project-card:hover .project-card__bg { opacity: 1; }
 .project-card:hover { background: var(--bg-secondary); }
+
 .project-card__content {
   position: relative; z-index: 1;
   flex-grow: 1;
 }
+
+/* Project number (01, 02, etc.) in monospace font */
 .project-card__number {
   font-family: var(--font-mono); font-size: 0.875rem;
   color: var(--text-muted); min-width: 40px;
   position: relative; z-index: 1;
 }
+
+/* Tech stack label below the project name */
 .project-card__tech {
   font-family: var(--font-mono); font-size: 0.75rem;
   color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;
 }
+
+/* Arrow indicator — turns accent colour on hover */
 .project-card__arrow {
   color: var(--text-secondary); transition: 0.3s ease;
   position: relative; z-index: 1;
@@ -215,7 +285,10 @@ a { color: inherit; text-decoration: none; }
 .project-card:hover .project-card__arrow { color: var(--accent); }
 .project-card:hover .fs-5 { color: var(--accent); }
 
-/* ===== STAT STRIP ===== */
+
+/* ===== STAT STRIP =====
+   Horizontal strip of key numbers (age, projects, internships).
+   Used on the homepage and about page. */
 .stat-strip {
   display: flex; flex-wrap: wrap;
   border: 1px solid var(--border);
@@ -236,7 +309,10 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase; letter-spacing: 0.1em;
 }
 
-/* ===== SKILL TAGS ===== */
+
+/* ===== SKILL TAGS =====
+   Small labels showing technologies (Java, React, etc.).
+   Slight scale-up on hover for interactivity. */
 .skill-tag {
   padding: 0.6rem 1.25rem;
   background: var(--bg-accent); border: 1px solid var(--border);
@@ -245,7 +321,9 @@ a { color: inherit; text-decoration: none; }
 }
 .skill-tag:hover { color: var(--accent); transform: scale(1.05); cursor: default; }
 
-/* ===== TIMELINE (education/background) ===== */
+
+/* ===== TIMELINE (education/background) =====
+   Horizontal rows showing year + description for the about page. */
 .timeline-item {
   padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border);
@@ -257,7 +335,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 
-/* ===== CONTACT ===== */
+/* ===== CONTACT =====
+   Styles for the contact page: labels, values, big email display,
+   the detail strip, and social media link buttons. */
 .contact__label {
   font-family: var(--font-mono); font-size: 0.75rem;
   color: var(--text-muted); text-transform: uppercase;
@@ -269,6 +349,7 @@ a { color: inherit; text-decoration: none; }
 .contact__value:hover { color: var(--accent); }
 .contact__value--small { font-size: 0.9rem; word-break: break-all; }
 
+/* Large prominent email address on the contact page */
 .contact__email-big {
   font-family: var(--font-mono);
   font-size: clamp(1.25rem, 3vw, 2.25rem);
@@ -277,6 +358,7 @@ a { color: inherit; text-decoration: none; }
 }
 .contact__email-big:hover { opacity: 0.7; }
 
+/* Horizontal strip of contact details (email, phone, location) */
 .contact-strip {
   display: flex; flex-wrap: wrap;
   border: 1px solid var(--border);
@@ -287,6 +369,7 @@ a { color: inherit; text-decoration: none; }
   flex: 1; min-width: 200px;
 }
 .contact-strip__item:last-child { border-right: none; }
+/* On mobile, stack vertically instead of side-by-side */
 @media (max-width: 767.98px) {
   .contact-strip__item {
     border-right: none;
@@ -296,6 +379,7 @@ a { color: inherit; text-decoration: none; }
   .contact-strip__item:last-child { border-bottom: none; }
 }
 
+/* Social media link buttons (GitHub, LinkedIn, Instagram) */
 .social-link {
   width: 50px; height: 50px;
   display: flex; align-items: center; justify-content: center;
@@ -303,6 +387,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;
   color: var(--text-secondary); transition: 0.3s ease;
 }
+/* Wide variant — used on the contact page for full-text labels */
 .social-link--wide {
   width: auto; height: auto;
   padding: 0.75rem 1.5rem;
@@ -312,24 +397,34 @@ a { color: inherit; text-decoration: none; }
   color: var(--bg-primary);
 }
 
-/* ===== PROJECT DETAIL — FULL BLEED HERO ===== */
+
+/* ===== PROJECT DETAIL — FULL BLEED HERO =====
+   Used on bootstrap-project.html and restaurant-project.html.
+   Full-width background image with a gradient overlay that
+   fades to the page background at the bottom. */
 .project-hero-image {
   position: relative; width: 100%;
   min-height: 50vh;
   background-size: cover; background-position: center;
 }
+/* Gradient from transparent → page bg, so content below blends in */
 .project-hero-image::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(to top, var(--bg-primary) 0%, transparent 60%);
 }
+/* Content positioned at the bottom of the hero image */
 .project-hero-image__content {
   position: absolute; bottom: 0; left: 0; right: 0;
   padding: 2rem; z-index: 1;
 }
+
+/* Small meta label (Type, Tech, Link) on project detail pages */
 .project-hero__meta-label {
   font-family: var(--font-mono); font-size: 0.7rem;
   color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;
 }
+
+/* List items in project content get an arrow prefix for visual interest */
 .project-content li {
   padding-left: 2rem; position: relative;
   border-bottom: 1px solid var(--border);
@@ -338,7 +433,9 @@ a { color: inherit; text-decoration: none; }
   content: '\2192'; position: absolute; left: 0; color: var(--accent);
 }
 
-/* ===== ABOUT IMAGE ===== */
+
+/* ===== ABOUT IMAGE =====
+   Caption badge positioned in the bottom-right corner of the about photo. */
 .about__image-caption {
   position: absolute; bottom: -0.5rem; right: -0.5rem;
   background: var(--accent); color: var(--bg-primary);
@@ -347,13 +444,18 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
 }
 
-/* ===== FOOTER ===== */
+
+/* ===== FOOTER =====
+   Small monospace text at the bottom of every page. */
 .footer__text {
   font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);
 }
 .footer__text:hover { color: var(--accent); }
 
-/* ===== HELPERS ===== */
+
+/* ===== HELPERS =====
+   Utility classes used alongside Bootstrap's built-in utilities
+   for quick, consistent styling across all pages. */
 .font-mono { font-family: var(--font-mono) !important; }
 .text-accent { color: var(--accent) !important; }
 .text-muted { color: var(--text-muted) !important; }
