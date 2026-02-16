@@ -13,8 +13,13 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!--
+    index.html — Homepage
+    Sections: Hero with name + photo, about preview with stats, featured projects grid.
+    Bilingual: translatable elements use data-en / data-nl attributes (toggled by script.js).
+  -->
   <div class="d-flex min-vh-100">
-    <!-- Side Navigation -->
+    <!-- Side Navigation (desktop) — 80px fixed bar, hidden on mobile -->
     <nav class="side-nav d-none d-md-flex">
       <a href="index.html" class="side-nav__logo">N.</a>
       <ul class="side-nav__links">
@@ -29,7 +34,7 @@
       </div>
     </nav>
 
-    <!-- Mobile Navigation -->
+    <!-- Mobile Navigation — offcanvas slide-in menu, visible only below 768px -->
     <nav class="navbar fixed-top d-md-none border-bottom border-custom" style="background: var(--bg-secondary);">
       <div class="container-fluid">
         <a href="index.html" class="navbar-brand font-mono fw-bold text-accent">N.</a>
@@ -53,7 +58,7 @@
 
     <!-- Main Content -->
     <main class="main-content flex-grow-1">
-      <!-- Hero Section — Stacked Layout -->
+      <!-- Hero Section — Full-viewport intro with name, status bar, and profile photo -->
       <section class="min-vh-100 d-flex flex-column justify-content-center py-5 px-4 px-lg-5 position-relative">
         <div class="d-flex align-items-end justify-content-between flex-wrap gap-4" data-aos="fade-up" data-aos-duration="800">
           <div>
@@ -78,7 +83,7 @@
         </div>
       </section>
 
-      <!-- Quick About Preview -->
+      <!-- Quick About Preview — short bio, skill tags, and stat strip -->
       <section class="py-5 px-4 px-lg-5 border-top border-custom">
         <div class="mb-4">
           <span class="section-label" data-en="about" data-nl="over mij">about</span>
@@ -120,7 +125,7 @@
         </div>
       </section>
 
-      <!-- Featured Projects -->
+      <!-- Featured Projects — top 3 projects with hover image reveal -->
       <section class="py-5 px-4 px-lg-5 bg-section-alt border-top border-custom">
         <div class="mb-4">
           <span class="section-label" data-en="projects" data-nl="projecten">projects</span>
